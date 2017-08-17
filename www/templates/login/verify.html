@@ -1,0 +1,32 @@
+<ion-view view-title="短信验证" class="bg_color" id="reg_page">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ui-sref="login"></yike-back>
+        <h1 class="title high fs1">验证手机号</h1>
+    </ion-header-bar>
+    <ion-content  scroll="false" class="login_content">
+        <form  class="reg_form">
+            <div class="list">
+                <span class="item item-input border">
+                    <input type="text" placeholder="输入您的手机号" ng-model="user.phone">
+                    <button ng-click="sendVerify()" class="button button-energized yzm send-msg">发送验证码</button>
+                </span>
+                <label class="item item-input border">
+                    <input type="password" placeholder="输入短信验证码" ng-model="user.code">
+                </label>
+            </div>
+            <button class="button button-energized yellow fs1" ng-click="subMit()">提交</button>
+            <div class="agree_box">
+                <div class="checkbox_five" ng-click="checked()">
+<!--                   <input type="hidden" checked="checked" value="1" id="" name="" />-->
+                    <label id="checkbox_five_input" class="change"></label>
+                </div>
+                <div class="agree_text fs4">我已阅读并同意<a>秀根用户协定</a></div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+
+
+
+
+

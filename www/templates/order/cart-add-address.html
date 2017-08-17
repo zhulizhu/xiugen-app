@@ -1,0 +1,63 @@
+<ion-view view-title="添加收货地址" id="cart">
+    <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">添加收货地址</h1>
+        <div class="buttons">
+            <button class="button" ng-click="addCartAddress()">保存</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div class="shade" ng-click="hideS('.con-set-cont')"></div>
+        <div class="linkman">
+            <div class="row cart-address-gray">
+                <span>联系人</span>
+            </div>
+            <div class="row-address-cont">
+            <div class="row row-border-bt">
+                <div class="col col-20"><span>姓名:</span></div>
+                <div class="col"><input type="text" placeholder="请输入您的姓名" ng-model="cont.name"></div>
+            </div>
+            <div class="row row-border-bt">
+                <div class="col col-20"><span>性别:</span></div>
+                <div class="col">
+                    <ion-radio radio-color="balanced"  ng-repeat="item in gender" ng-model="cont.gender" ng-value="item.value" style="width:100px;float:left;">
+                        {{item.text}}
+                    </ion-radio>
+                </div>
+            </div>
+             <div class="row">
+                 <div class="col col-20"><span>手机:</span></div>
+                 <div class="col"><input type="text" placeholder="请输入收货手机号码,以便配送员联系您" ng-model="cont.telephone" style="font-size:13px;"></div>
+             </div>
+            </div>
+        </div>
+        <div class="get-address">
+            <div class="row cart-address-gray">
+                <span>收货地址</span>
+            </div>
+            <div class="row-address-cont" style="border-bottom:1px solid #ddd;">
+            <div class="row row-border-bt" style="position: relative">
+                <div class="col col-40"><span>小区/大厦/学校:</span></div>
+                <div class="col" ng-click="listItem()">
+                    <div ng-click="showS('.con-pro')"><span class="ion-location" style="font-size:18px;margin-right:4px;"></span><span ng-bind="cont.address_name||'定位选择'"></span></div>
+                    <div class="con-set-cont con-pro">
+                        <ion-scroll>
+                            <ul>
+                                <li ng-repeat="pros in addList" ng-click="switchP(pros)"><span class="ion-ios-location-outline kgd" style="color: #bc8659;margin-right:4px;"></span>{{pros.text}}</li>
+                            </ul>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div class="col col-10"><span></span></div>
+            </div>
+            <div class="row">
+                <div class="col col-33">楼号-门牌号:</div>
+                <div class="col">
+                    <input type="text" placeholder="例:3号楼1025号" ng-model="cont.remarks">
+                </div>
+            </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

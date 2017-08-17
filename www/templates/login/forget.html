@@ -1,0 +1,28 @@
+<ion-view class="bg_color">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">设置密码</h1>
+    </ion-header-bar>
+    <ion-content  scroll="false" class="login_content">
+        <form  class="forget_form">
+            <div class="list">
+                <span class="item item-input border">
+                    <input type="text" placeholder="输入您的手机号" ng-model="user.phone">
+                    <button class="button button-energized yzm send-msg" ng-click="sendMsg()">发送验证码</button>
+                </span>
+                <label class="item item-input border">
+                    <input type="password" placeholder="输入短信验证码" ng-model="user.code">
+                </label>
+                <label class="item item-input border cipher">
+                    <input type="password" placeholder="输入新密码" ng-model="user.password">
+                </label>
+            </div>
+            <button class="button button-energized yellow fs1" ng-click="forget()">提交</button>
+        </form>
+    </ion-content>
+</ion-view>
+
+
+
+
+

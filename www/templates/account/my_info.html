@@ -1,0 +1,57 @@
+<ion-view view-title="个人信息" id="person">
+    <ion-header-bar align-title="center" class="bar bar_top my_pack bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high">个人信息</h1>
+    </ion-header-bar>
+    <ion-content >
+        <div class="person-top">
+            <span>个人资料</span>
+        </div>
+        <ul>
+            <li class="top-person"  ng-click="selectImg()">
+                <span>头像</span>
+                <i class="ion-ios-arrow-right"></i>
+                <div class="person-info">
+                    <img class="imgPicker" id="image" ng-src="{{info.userpic || 'img/personal/head_img.png'}}"/>
+                </div>
+                <input type="file" class="fileSelector"  style="position:absolute;left:0;top:0;width:1px;height:1px;display:none">
+            </li>
+
+            <li ui-sref="reset-username">
+                <span>用户名</span>
+                <i class="ion-ios-arrow-right"></i>
+                <div class="person-info">
+                    {{info.username}}
+                </div>
+            </li>
+
+            <li ui-sref="reset-phone">
+                <span>手机号</span>
+                <i class="ion-ios-arrow-right"></i>
+                <div class="person-info">
+                <span>{{info.telephone}}</span>
+                </div>
+            </li>
+
+            <li ui-sref="cart-address">
+                <span>地址管理</span>
+                <i class="ion-ios-arrow-right"></i>
+                <div class="person-info">
+                    查看我的地址
+                </div>
+            </li>
+            <li class="person-top">安全设置</li>
+            <li  ui-sref="forget">
+                <span>登录密码</span>
+                <i class="ion-ios-arrow-right"></i>
+                <div class="person-info">
+                    可修改密码
+                </div>
+            </li>
+        </ul>
+        <input type="file"  value="" id="file" accept="*/*" style="position: absolute;height:1px;width:1px;display:none;bottom:0px;">
+    </ion-content>
+    <div class="bar bar-footer" ng-click="submit()" style="background:#de5e45">
+        <div class="title kbh" style="color:#fff;">切换帐号</div>
+    </div>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view class="bg_color" id="red_bag">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ng-click="stateGo()"></yike-back>
+        <h1 class="title high fs1">红包摇一摇</h1>
+    </ion-header-bar>
+    <ion-content  scroll="false" class="login_content">
+        <div class="bag_bg">
+            <img src="img/red_bag/bag_bg.png">
+            <div class="game_box">
+                <h3 class="cl1" ng-click="openModal()">今日剩余<i ng-bind="count"></i>次机会</h3>
+                <span ui-sref="user_rule"></span>
+                <a ui-sref="my_bag">查看我的红包></a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+

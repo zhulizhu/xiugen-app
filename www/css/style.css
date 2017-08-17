@@ -1,0 +1,270 @@
+.bg_color {
+    background: #f3f3f3;
+}
+
+.fs1 {
+    font-size: 1.375em !important;
+}
+
+/*22px*/
+.fs2 {
+    font-size: 1.25em !important;
+}
+
+/*20px*/
+.fs3 {
+    font-size: 1em !important;
+}
+
+/*16px*/
+.fs4 {
+    font-size: 1.125em !important;
+}
+
+/*18px*/
+.fs5 {
+    font-size: 0.875em !important;
+}
+
+/*14px*/
+.fs6 {
+    font-size: 0.75em !important;
+}
+
+/*12px*/
+
+.cl {
+    background: #ffbc00 !important;
+}
+
+.cl1 {
+    color: #454545 !important;
+}
+
+.cl2 {
+    color: #ffbc00 !important;
+}
+.modal-backdrop{
+    background: rgba(7,17,27,0.5);
+    z-index: 9999;
+}
+/*首页中的banner*/
+.swiper-container {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet {
+}
+
+.swiper-pagination-bullet-active {
+    background: white;
+    opacity: 1;
+}
+
+.swiper-slide.chose {
+    background: #f10000;
+    border-radius: 12.5px;
+    color: #fff;
+    height: 25px;
+    /*width: 58px;*/
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.swiper-slide a {
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+.swiper-slide a img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*菜单套餐页*/
+.tab-package .has-header {
+    top: 0 !important;
+}
+
+/*合作加盟*/
+#join textarea {
+    resize: none !important;
+}
+
+.join1 .one{
+    width: 76%;
+    position:absolute; 
+    top:13%;
+    left:12%;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 0 !important;
+}
+.join1 .two{
+    width: 76%;
+    position:absolute; 
+    top:43.5%;
+    left:13%;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 0 !important;
+}
+
+
+/*提交订单*/
+#package-pay {
+    background: #F5F5F5;
+    font-size: 0.8em;
+    font-family: "微软雅黑";
+}
+
+/*background: url("../img/order/address.jpg")#fff center no-repeat; background-size:98%; height: 100px;*/
+.order-address {
+    border: 1px dashed #FFBC00 !important;
+    margin: 10px;
+}
+
+.more-address {
+    width: 96%;
+    margin: 0 auto;
+    padding: 15px 0;
+    height: auto;
+}
+
+.more-address p {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.order-listing {
+    background: #fff;
+    border-top: 1px solid #ececec;
+    padding-top: 10px;
+}
+
+.order-listing .cart_word {
+    width: 65%;
+}
+#package-pay .cargo-information{
+    background-color: #fff;
+}
+#package-pay .cargo-information .goods-list{
+    /*color: red;*/
+    height: 35px;
+    line-height: 30px;
+    border-bottom: 1px solid #F5F5F5;
+    font-size: 14px;
+    /*padding: 5px 0;*/
+}
+#package-pay .cargo-information .goods-list>span{
+    display: inline-block;
+    width: 32%;
+    height: 30px;
+}
+#package-pay .cargo-information .goods-list>span:nth-child(1){
+    text-align: left ;
+}
+#package-pay .cargo-information .goods-list>span:nth-child(2){
+    text-align: right ;
+}
+#package-pay .cargo-information .goods-list>span:nth-child(3){
+    text-align: right;
+}
+
+#package-pay .comm-title{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+}
+#package-pay .select-time{
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+#package-pay .door-time{
+    line-height: 50px;
+    text-align: right;
+    color: #FF6D00;
+}
+
+#order-submit .address p button {
+    float: right;
+    margin: -5px -20px 0 10px
+}
+#share{height:130px;}
+#share h2 {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.0em;
+    font-family: "microsoft yahei", Verdana, Arial, Helvetica, sans-serif;
+}
+/*分享模态样式*/
+#share ul li {
+    width: 25%;
+    float: left;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#share ul li img {
+    width: 60%;
+}
+#friend_share{
+    background: #fff;
+    padding: 0 2%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*门票*/
+#my_ticket .has-header{
+    background-color:#f3f3f3;
+    padding:10px;
+}
+#my_ticket .has-header .my-ticket-box{
+    border:2px dotted #ececec;background-color: #fff;
+    border-radius:10px;
+    width:100%;height:200px;margin-bottom:20px;
+}
+#my_ticket .has-header .my-ticket-box.active{border: 2px dotted #f7f7f7;}
+#my_ticket .has-header .my-ticket-header{
+    width:100%;background-color:#ffc900;color: #fff;line-height:30px;font-size:14px;padding:10px 10px;border-radius:10px 10px 0 0;border-bottom:1px solid #ececec;
+}
+#my_ticket .has-header .my-ticket-header.active{  background: #f7f7f7;color:#000; }
+#my_ticket .has-header .my-ticket-header>span{width:50%;display: inline-block;}
+#my_ticket .has-header .my-ticket-cont{  width:100%;position:relative;overflow:hidden;height:auto;  }
+#my_ticket .has-header .ticket-cont-top{width:100%;padding:10px 10px;color:#ef473a;border-bottom:1px solid #f4f4f4;background-color:#f7f7f7;color:#ffc900;}
+#my_ticket .has-header .ticket-cont-top.active{color:#000;}
+#my_ticket .ticket-cont-left{display: inline-block;border-right: 1px dashed #ececec;height:80px;line-height:80px; width:30%;text-align: center;}
+#my_ticket .ticket-cont-left>span{color:#ef473a;font-size:20px;font-weight:500;}
+#my_ticket .ticket-cont-left>span.active{color:#000;}
+#my_ticket .ticket-cont-right{display: inline-block;height:80px;width:60%;padding-left:10px;text-align: left;}
+#my_ticket .ticket-cont-right>p{height:20px;line-height:20px;color:#d8d8d8;}
+#my_ticket .ticket-cont-footer{background-color:#e6b500;color:#fff;height:30px;line-height:30px;font-size:13px;padding-left:10px;border-radius:0px 0px 10px 10px;font-weight:500;}
+#my_ticket .ticket-cont-footer.active{background-color:#f7f7f7;color:#000;}
+#my_ticket .my-ticket-explain{padding:10px 10px;width: 100%;overflow: hidden;background-color: #fff;color:#333;}
+#my_ticket .my-ticket-explain>p{margin-bottom:10px;}
+.select{padding:5px;height:250px;text-align:center;border-radius: 2px;}
+.select .scroll-view{height:250px;}
+.select .scroll-view .list-item{margin-bottom:1px;line-height: 50px;width:100%;font-size: 16px;background: #fff;border: 1px solid #fff;border-radius:5px;}
+
+

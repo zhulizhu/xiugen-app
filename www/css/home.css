@@ -1,0 +1,698 @@
+/*tabs*/
+ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated{color: #ffbc00;}
+.tab-home{ background: url("../img/tabs/tab_home.png") no-repeat center; background-size: 25px;color: #a6a6a6;}
+.tab-home-active{ background: url("../img/tabs/tab_home_active.png") no-repeat  center; background-size: 25px; color: #ffbc00;}
+.tab-recharge{ background: url("../img/tabs/recharge.png") no-repeat center; background-size: 25px;}
+.tab-recharge_active{ background:  url("../img/tabs/recharge_active.png") no-repeat center; background-size: 25px;}
+.tab-package{ background: url("../img/tabs/package.png") no-repeat center;background-size: 25px;}
+.tab-package_active{ background:  url("../img/tabs/package_active.png") no-repeat  center; background-size: 25px;}
+.tab-my{ background: url("../img/tabs/my.png") no-repeat center; background-size: 25px;}
+.tab-my-active{ background:  url("../img/tabs/my_active.png") no-repeat center; background-size: 25px;}
+.tab-nav.tabs{background-image: linear-gradient(0deg, #ffbc00, #ffbc00 50%, transparent 50%); border-top:1px solid yellow;background-color: #fff; }
+.circle-icon{
+	display:inline-block;
+	border-radius: 50%;
+	border: 1px solid #e7e7e7;
+	width: 30px;
+	height: 30px;
+	margin-top: 7px;
+	line-height: 30px;
+	text-align: center;
+	color: #ffbc00;
+	font-size:26px;
+}
+.circle-right{
+	position: absolute;
+	right:0px;
+	top:-18px;
+	color:#ff9433;
+}
+/*首页*/
+#tab_home .h1.title{margin-left: 0;}
+/*#tab_home .con-set-cont{
+	position: absolute;
+	top:0;
+	z-index:5;
+	background-color: #fff;
+	width:80%;min-height:35px; max-height:285px;overflow:auto;
+	display:block;
+}*/
+#tab_home .con-set-cont {
+	position: fixed;
+	top: 50%;
+	left:50%;
+	z-index:9999;
+	background-color: #fff;
+	width: 80%;
+	min-height: 200px;
+	max-height: 285px;
+	overflow: auto;
+	display:none;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	padding-bottom:20px;
+}
+#tab_home .con-set-cont li{
+	line-height:35px;
+	border-bottom:1px solid #f4f4f4;
+	width:90%;margin:0 auto;font-size:12px;
+}
+#tab_home .con-set-cont .tab-home-li{
+	border-bottom: none;
+	text-align: center;
+	color: #bc8659;
+	font-size: 16px;
+	font-weight: 700;
+}
+.button.button-clear.ion-ios-email-outline.home_color{color: #4c3b00; font-size:2em; font-weight:bold;}
+.button.button-icon.home_share{ background: url("../img/home/home_share.png") no-repeat center center;width:25px;}
+.ion-android-arrow-dropdown.distance{margin-left:5px;}
+.row.col.col-25 .nav1{width: 90px; height: 80px; background:url("../img/home/nav1.png") no-repeat center; display: block;}
+.row.all_high{width:100%; height:100px; background:#fff;}
+.col.col-25 img{width: 45px; height: 45px; margin: 0 auto; display: block;}
+.col.col-25 a{text-align: center; display: block; color: #454545; line-height: 35px;}
+.package_box{margin-top: 10px; border-top: 1px solid #e9e9e9;  border-bottom: 1px solid #e9e9e9; background: #fff;}
+.swiper-container1 .swiper-slide {text-align: center;  font-size: 18px;  background: #fff;  display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex;  display: flex;  -webkit-box-pack: center;  -ms-flex-pack: center;  -webkit-justify-content: center;  justify-content: center;  -webkit-box-align: center;  -ms-flex-align: center;  -webkit-align-items: center;  align-items: center;  }
+.swiper-slide .move_box{height:100px; display:block; color: #454545;}
+.swiper-slide .move_box .package_name{display:inline-block; line-height: 100px; float: left; padding-left:5%;margin-right:10px;}
+.swiper-slide .move_box .package_pic{ display:inline-block;  width: 80px; height: 80px; margin:10px 0; position: relative; overflow: hidden;float:left;}
+.package_pic img{width: 100%; height: 100%; display: block;}
+.package_pic .pic_bg{ position:absolute; left:0; top:0;height: 100%; width: 100%; background: url("../img/home/pic_bg.png") no-repeat 100%;}
+.list.card1{border-top: 1px solid #e8e8e8; margin-top: 10px; }
+.item.item-avatar.hot{ min-height: 30px; border-top:none; padding:0;}
+.item.item-avatar.hot span{ line-height: 30px; display: block;  border-left:3px solid #f10000; color: #f10000; margin: 8px auto; text-indent: 10px;}
+.list.card1 .item-body{padding: 10px;border-top:1px solid #f8f8f8;}
+.list.card1 .item-body P{margin: 0;overflow: hidden;}
+.list.card1 .item-body .hot_name{ margin: 5px auto;}
+.list.card1 .item-body .subdued.big{font-size: 24px;color: #f10000;font-weight: 600;padding-top: 3px;vertical-align: baseline; margin-top: 3px; display: inline-block;}
+.low_price{ position: relative;}
+.low_price .ion-ios-plus-outline.position{ position:absolute; right: 1%; top:2%; font-size: 1.5em; color: #ff7900;}
+.bar.car{height:auto; display: block; position:fixed; left:86%; top:70%; padding: 0; margin: 0; z-index: 999; background: #ff7900;border:2px solid #fff; border-top-left-radius: 15px;border-bottom-left-radius: 15px;}
+.bar.car .shop_car{width:40px; height: 34px; display: block;}
+.bar.car .shop_car .ion-ios-cart-outline{font-size: 1.75em; color: white; font-weight: bold; text-indent: 10px;line-height: 34px; }
+#tab_home .low_price-circle{float: right;width:30px;height:30px;border:1px solid #ececec;border-radius:50%;line-height:30px;text-align: center;color:#ff7900;font-size:26px;margin-top:0px;}
+/*套餐定制*/
+#custom ion-content{ margin-top: 10px;}
+#custom .item.item-body{ margin-bottom: 10px;background-color: #fff; padding:16px 16px 0 16px;}
+#custom .item.item-body .hot_name{ text-align: center; display: block; padding: 6px 0 ;}
+#custom .item.item-body .low_price{ margin-top: 6px; margin-bottom: 6px; text-align: center; display: block; position: relative;}
+#custom .checkbox_y{width: 40px;  height: 40px;  position: relative;  overflow: hidden;border-radius: 50%;  display: inline-block;text-align: center; margin: 0 5%; }
+#custom .checkbox_y label {cursor: pointer;  position: absolute;  width: 40px;line-height: 36px;  top: 0;  left: 0;  border:1px solid #ffbc00;  border-radius: 50%;  text-align: center;  color: #454545;overflow: hidden; max-height: 40px;}
+#custom .checkbox_y input{ position: absolute;top:-20px;}
+#custom .checkbox_y input[type="checkbox"]:checked +label:after{background: #ffbc00;}
+#custom .checkbox_y.active{ background: url("../img/home/active.png") no-repeat center; }
+#custom .checkbox_y.active label{color: #fff;}
+#custom .item.item-body .ion-ios-plus-outline.position{ position: absolute; right:0; top:2%; font-size: 1.75em; color: #ffbc00; font-weight: bold; line-height: 34px; }
+#custom .ticket{display: inline-block;line-height:35px;height:35px;font-size:14px;text-align: center;width:auto;padding:0px 8px; position: relative;  overflow: hidden;border:1px solid #FFbc00;border-radius:4px;margin-right:5px;}
+#custom .ticket.active{background-color:#FFbc00;color: #fff;}
+/*套餐详情*/
+#package_details ion-content{ margin-top: 10px; }
+#package_details .has-header{padding-bottom: 45px; margin-bottom: 45px;}
+#package_details .item{border-top:none; border-color: #d7d7d7;}
+#package_details .item.item-body{background-color: #fff; padding:10px 10px 0 10px;}
+#package_details .item.item-body .hot_name{ display: block; padding: 6px 0 ;}
+#package_details .sorts{width: 100%;background-color:#f3f3f3; min-height:40px;height:auto; display: block;padding-bottom:40px;}
+#package_details .sorts .row{width: 100%;text-align: center;padding:0;}
+#package_details .sorts .row.fs4{height:40px; line-height:40px;background: #f3f3f3; }
+#package_details .sorts .row .col{padding: 0 5px; color: #999;}
+#package_details .sorts .row .col.col-33 span{margin: 0 auto; display: block;padding:0 5px 6px 5px; cursor: pointer;}
+#package_details .sorts .row .col.col-33.active{border-bottom:3px solid #ffbc00; color: #939393; background-color: #fff;}
+#package_details .parameters{background-color:#fff; width: 100%; height: auto; display: block; border-bottom: 1px solid #d7d7d7;padding-bottom: 10px;}
+#package_details .sorts .parameters .row{line-height:40px;margin: 0; padding: 0; text-align: center;}
+#package_details .sorts .parameters .row{line-height:40px;margin: 0; padding: 0; text-align: center;}
+#package_details .sorts .row .col.col-75{text-align:left;line-height:40px; border-bottom: 1px solid #d7d7d7;}
+#package_details .sorts .row .col.hang{text-align:left;line-height:24px; padding-top: 8px; border-bottom: none;}
+#package_details .sorts.explain{padding-left: 20px; margin-top:20px; border-top: 1px solid #efefef;background-color:#fff;}
+#package_details .sorts.explain .title{ padding: 0; height:40px; line-height:40px;text-indent: 5px;background-color:#fff;}
+#package_details .sorts.explain .title .line{border-bottom: 1px solid #d7d7d7;}
+#package_details .sorts.explain .title .mycol{padding:0;color:#333;margin-left:-10px;font-weight: 700;}
+#package_details .sorts.explain .parameters{border-bottom:none;padding-top:10px;}
+#package_details .bar.bar-subfooter{bottom:0; border-top:1px solid #ffbc00;padding: 0;}
+#package_details .bar.bar-subfooter .col.col-50{ color: #666; float: left;padding-left: 5%; margin-top:6px;}
+#package_details .bar.bar-subfooter .col.col-50 i{ color: #e92840;}
+#package_details .seal_buy{width: 100%; height: inherit;}
+#package_details .seal_buy .buy{width:40%; height: inherit; background-color: #ff7900;float: right; line-height: 44px; text-align: center; color: #fff;}
+
+/*果蔬直供*/
+#direct_supply .has-header{ margin-top: 54px;padding:0; }
+#direct_supply .kind{width: 100%; height: auto; display: block; margin-bottom: 15px;background: #fff; float: left;border-bottom: 1px solid #d7d7d7; padding-bottom: 1px;}
+#direct_supply .kind .item{border:none; }
+#direct_supply .kind .item.item-body{width: 50%; height: auto; display: block; float: left; padding:10px 8px;}
+#direct_supply .bar.subheader{ height: 36px;  padding: 0;}
+#direct_supply .bar.subheader .row{padding: 0; margin: 0;}
+#direct_supply .bar.bar-subheader .row .col.col-20{text-align: center;line-height:15px; }
+#direct_supply .bar.bar-subheader .row .col.col-20.chose{ background: #f10000; border-radius: 22px; color: #fff;}
+#direct_supply .bar.bar-subheader .chose{ background: #f10000; border-radius: 22px; color: #fff;}
+#direct_supply .fruits{width: 100%; height:140px; display: block; border: 1px solid #d7d7d7; margin-bottom: 1px; overflow: hidden;}
+#direct_supply .fruits .full-image{width: 100%;}
+#direct_supply .item.item-body p.hot_name{ margin:10px 0 0px 0;height: 40px;
+ overflow: hidden;}
+#direct_supply .item.item-body p.low_price{ margin: 0;position:relative;}
+#direct_supply .big{color: #ff7900; }
+#direct_supply .sm{color: #ababab;}
+#direct_supply .col.col-45 a{margin-right: 1%;}
+#direct_supply .col.col-45 .ion-ios-plus-outline.position{position: absolute; right: 1%;  top: -13%;  font-size: 1.875em;color: #ff7900;}
+
+/*水果详情*/
+#detail .swiper-container3 .swiper-pagination{background: #ccc;}
+#detail .list.card1{ border-top: none;}
+#detail .list.card1 .item{border-top:none;border-color:#e7e7e7;}
+#detail .parameters{background: #fff; border-bottom: 1px solid #d8d8d8;}
+#detail .parameters .row{padding: 5px 0 0 5px;margin-top:0px;}
+#detail .parameters .row .col{color: #999;}
+#detail .parameters .row .col.col-75{border-bottom: 1px solid #e8e8e8;}
+#detail .parameters .row:nth-child(3) .col.col-75{border-bottom: none;}
+#detail .detail{width: 100%; height: 44px; line-height: 44px; position: relative;}
+#detail .detail span{width: 80%; height: 22px; display: block; margin:0 auto; border-bottom: 1px solid #d8d8d8;}
+#detail .detail div{display: block; background: #f3f3f3; position: absolute; top: 0; left:50%;width: 30%; margin-left: -15%;text-align: center;}
+#detail .det_pic{width: 100%; height: auto; display: block;border-bottom: 1px solid #f4f4f4;background-color:#fff;}
+#detail .det_pic img{width: 100%; height: auto; display: block;}
+#detail ion-content{margin-bottom: 44px;}
+#detail .bar.bar-subfooter{bottom:0; border-top:1px solid #ffbc00;padding: 0;}
+#detail .bar.bar-subfooter .add_goods{width: 70%; height: 44px; color: #666; float: left;padding-left: 2%;}
+#detail .bar.bar-subfooter .add_goods i{float: left; line-height:44px;}
+#detail .bar.bar-subfooter .add_goods input{ float:left; width: 50px; height: 30px; line-height: 30px; text-align: center;margin-top: 6px; font-size:1.125em; }
+#detail .bar.bar-subfooter .add_goods span{ float: left; display: block; border-radius: 50%; border: 1px solid #ddd;width: 30px; height: 30px; margin-top: 7px; line-height: 30px; text-align: center; color: #ff7900;}
+#detail .seal_buy{width: 100%; height: inherit; margin-right:2%;}
+#detail .seal_buy .buy{width:30%; height: 30px;  margin-top:6px;background-color: #ff7900;float: right; line-height:30px;text-align: center; color: #fff;border-radius: 15px;}
+#detail .seal_buy .buy .ion-ios-cart-outline{padding-right: 3px;font-size: 1.5em; line-height: 30px; font-weight: bold; float: left;padding-left: 20%;}
+#detail .seal_buy .buy span{line-height: 32px; float: left;}
+#detail .myButton-more{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #FFC900;
+	color: #fff;
+	line-height: 38px;
+	border-radius: 5px;
+}
+/*我的——个人中心*/
+#my .has-header{top:75px;}
+#my .bar.bar_top{width: 100%; height: 130px;}
+#my .bar.bar_top .buttons .button{ min-height: 80px;}
+#my .bar.bar_top .home_color{color: #fff; font-size:2em; font-weight:bold; margin-right: 5px;line-height:100px;}
+#my .header-bar-box{position:relative;width:100%;height: auto;padding:10px;overflow:hidden;}
+#my .header-bar-box .head_box{width:80px;height:80px;overflow:hidden;background-color:#ffbc00;border:1px solid #f4f4f4;border-radius:50%;display:inline-block;}
+#my .header-bar-title{position: absolute;left:110px;top:20px;}
+#my .header-bar-box .head_box .header-image{max-width:80px;max-height:80px;width:100%;height:100%;}
+#my .title.high{text-align:left;height: auto; margin-top: 8px;top:15px;}
+#my .title.high span{line-height: 40px; color: #fff; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+#my .title.high .reg_member{line-height: 20px; color: #e92840; background: #fbf1d4; border-radius: 10px; display:inline-block;padding: 0 5px; max-width:150px;}
+#my ion-content{ margin-top: 65px;background: #f3f3f3;}
+#my .my_order{width: 100%;height: auto;  background: #fff; margin-bottom: 10px;}
+#my .my_order .my_order_top{width: 100%;line-height:50px;  display: block;border-bottom:1px solid #f2f2f2; padding: 0 10px;overflow:hidden;}
+#my .my_order h3{font-size: 1.25em; line-height: inherit; margin:0; float: left;}
+#my .my_order .buttons{float: right; margin: 0; padding: 0; color: #999;line-height:50px;overflow: hidden; }
+#my .my_order .buttons .button.button-icon.ion-ios-arrow-forward{color: #999;line-height:48px;}
+#my .my_order .row img{width: 26px; height: 26px; margin-top: 4px;}
+#my .my_order .row.all_high{ height:auto;}
+#my .my_order .row.all_high.wallet{ height:auto;box-shadow:2px 2px 2px #eaeaea;}
+#my .my_order .row .col.col-33 span{font-weight:700;width: 100%; height: 35px; line-height: 35px; text-align: center; display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+#my .my_order .row .col.col-33 a{text-align: center; display: block; color: #454545; line-height: 35px;}
+#my .my_order .row.all_high.link{ margin: 5px 0;}
+#my .my_order .row.all_high.link:first-child{border-bottom: 1px solid #f2f2f2;}
+#my .my_order_font{font-weight:400}
+#my .reg_member{color:#fff;font-weight:700;font-size:14px;}
+#my .header-my-bg{background-color: #fbf1d4;padding:2px 5px;color:#ea394a;margin:10px 0 5px 0px;border-radius:10px;overflow: hidden;}
+#my .header-my-span{position: relative;overflow: hidden;padding-top:5px;}
+#my .header-my-buttons{height:100px;overflow: hidden;position: relative;}
+/*红包*/
+#red_bag .bar{background-image: none;}
+#red_bag .bag_bg{width:100%; height:100%; display:block; position: relative; background: #fdf9d2;}
+#red_bag .bag_bg img{width:100%;display:block; position: absolute; left: 0; top: 0;
+ transform:rotate(0deg);transition:transform 0.3s;-webkit-transform:rotate(0deg);
+}
+#red_bag .red_bagH{
+ animation:myShake 0.4s;-webkit-animation:myShake 0.4s;
+}
+@keyframes myShake{
+0%{transform: rotate(0deg);}
+33%{transform: rotate(-45deg);}
+66%{transform:rotate(45deg);}
+100%{transform:rotate(0deg)}
+}
+@-webkit-keyframes myShake {
+  0%{transform: rotate(0deg);}
+  33%{transform: rotate(-45deg);}
+  66%{transform:rotate(45deg);}
+  100%{transform:rotate(0deg);}
+}
+#red_bag .game_box{width:100%; height: auto; position: absolute; left: 0; bottom: 10%; display: block;}
+#red_bag .game_box h3{text-align: center; font-size: 1.5em;}
+#red_bag .game_box h3 i{ color: #ffbc00;}
+#red_bag .game_box span{width: 40%; height: 26px; display: block; background: url("../img/red_bag/active_rule.png") no-repeat; background-size: 100%; margin: 0 auto;}
+#red_bag .game_box a{width: 100%; height: 30px; line-height: 30px; text-align: center; display: block; color: #e84144; margin-top: 10px;}
+/*红包弹窗1*/
+#red_pop{width: 100%; height: auto; display: block; background: rgba(0,0,0,0.5);}
+#red_pop .loser{width: 95%; height:300px; display: block;margin:50% auto; background: #fff; border-radius: 6px;}
+#red_pop .loser p{width: 100%; height:auto; display: block; color: #ffbc00; text-align: center; line-height: 36px; padding-top:20px; font-size: 1.5em;}
+#red_pop .loser img{width:auto; height: 100px; display: block; margin: 0 auto;}
+#red_pop .loser a{width:40%;font-size: 1.5em; background: #ffbc00; border-radius:23px; color: #fff; height: 40px; line-height: 34px; padding: 3px 10px; margin:20px auto;text-align: center; display: block;}
+#red_pop .win{width: 95%; height:300px; display: block;margin:50% auto; background: #fff; border-radius: 6px;}
+#red_pop .win p{width: 100%; height:auto; display: block; color: #ffbc00; text-align: center; line-height: 36px; padding-top:10px; font-size: 1.5em;}
+#red_pop .win span{width: 100%; height:auto; display: block; text-align: center; line-height: 36px; padding-top:10px; font-size: 1.7em;}
+#red_pop .win img{width:auto; height: 120px; display: block; margin: 0 auto;}
+#red_pop .win a{width:40%;font-size: 1.5em; background: #ffbc00; border-radius:23px; color: #fff; height: 40px; line-height: 34px; padding: 3px 10px; margin:15px auto;text-align: center; display: block; text-decoration: none;}
+
+/*红包使用规则*/
+#user_rule .hot_name{width: 100%; height: 45px; line-height: 45px; display:inline-block; text-align: center; margin-top: 10px;}
+#user_rule .hot_name span{width: 30%; height: 45px; display:inline-block;}
+#user_rule .hot_name span img{width: 100%; height: 8px; display:inline-block;}
+#user_rule .hot_name i{ display: inline-block;}
+#user_rule .rule_content{width:90%; height: auto; display: block; margin:0 auto; list-style-type: decimal; padding-left: 10px; color: #666;}
+#user_rule .rule_content li{ margin: 10px auto;}
+
+/*我的红包*/
+#my_bag .user_rule{ display:block;height: 40px; line-height: 40px; margin: 0 auto; float: right;}
+#my_bag .user_rule a{ display: block; float: right;padding: 0 10px 0 5px;}
+#my_bag .user_rule span{width:16px; height: 16px; float: right;}
+#my_bag .user_rule span img{width:100%; display: block; margin-top:12px;}
+#my_bag .bag_box{clear: both;width: 100%; height: auto; display: block;}
+#my_bag .item{margin: 0 8px 14px 8px; height:auto; border-radius: 5px;border-width: 0; overflow: hidden; padding:0; background: none;}
+#my_bag .item .ticket{width:80%; height: 100px; background: #fff;float: left;}
+#my_bag .item .ticket .ticket_bg{background:#fff; height:70px;padding: 0 5px;}
+#my_bag .ticket_bg span{ height: 30px; line-height:30px; font-size:1em; }
+#my_bag .ticket_bg p{margin: 0; color: #999; font-size: 0.75em;}
+#my_bag .item .expiry_date{ height: 30px; line-height: 30px; background: #f9f9f9; color: #ffbc00;padding: 0 5px;font-size:10px;}
+#my_bag .item .ticket_price{ height:100px;width: 20%;float: right;}
+#my_bag .item .ticket_price .price{ height: 70px;background: url("../img/red_bag/price_red.png") no-repeat; text-align: center;}
+#my_bag .item .ticket_price .price p{width:95%; margin-top:0; margin-left:5px;line-height: 20px;color: #fff; padding:15px 0 0; text-align: center;}
+#my_bag .item .ticket_price .price p strong{ font-size: 1.5em; font-weight: normal;}
+#my_bag .item .price_bg{height: 30px; background: url("../img/red_bag/price_bg.png") no-repeat left bottom;}
+#my_bag .find_more{width: 100%; height:20px; display: inline-block; text-align: center; margin-top: 30px;}
+#my_bag .find_more .no_more{ color: #999; border-right: 1px solid #666; padding: 0 5px; }
+#my_bag .find_more .more{ color: #ffbc00; padding: 0 5px;}
+
+
+/*失效红包*/
+#invalid_bag .user_rule{ display:block;height: 40px; line-height: 40px; margin: 0 auto; float: right;}
+#invalid_bag .user_rule a{ display: block; float: right;padding: 0 10px 0 5px;}
+#invalid_bag .user_rule span{width:16px; height: 16px; float: right;}
+#invalid_bag .user_rule span img{width:100%; display: block; margin-top:12px;}
+#invalid_bag .bag_box{clear: both;width: 100%; height: auto; display: block;}
+#invalid_bag .item{margin: 0 8px 14px 8px; height:auto; border-radius: 5px;border-width: 0; overflow: hidden; padding:0; background: none;}
+#invalid_bag .item .ticket{width:80%; height: 90px; background: #fff;float: left;}
+#invalid_bag .item .ticket .ticket_bg{background:#fff; height:70px;padding: 0 5px;}
+#invalid_bag .ticket_bg span{ height: 30px; line-height:30px;color: #999; font-size: 1em;}
+#invalid_bag .ticket_bg p{line-height:26px; margin: 0; color: #999; font-size: 0.75em;}
+#invalid_bag .item .expiry_date{ height: 30px; line-height: 30px; background: #f9f9f9; color: #999;padding: 0 5px;}
+#invalid_bag .item .ticket_price{ height:100px;width: 20%;float: right;}
+#invalid_bag .item .ticket_price .price{ height: 70px;background: url("../img/red_bag/price_red1.png") no-repeat; text-align: center;}
+#invalid_bag .item .ticket_price .price p{width:95%; margin-top:0; margin-left:5px;line-height: 20px;color: #fff; padding: 8px 0; text-align: center;}
+#invalid_bag .item .ticket_price .price p strong{ font-size: 1.5em; font-weight: normal;}
+#invalid_bag .item .price_bg{height: 30px; background: url("../img/red_bag/price_bg1.png") no-repeat left bottom;}
+
+/*验证银行卡信息*/
+#card_message ion-content .title{ padding: 0 10px; line-height: 40px; height: 40px; color: #999;}
+#card_message ion-content .list span{min-width:60px; display: block; color: #454545;}
+#card_message .list input{width: 80%; color: #999; font-size: 1em;}
+#card_message .card_number{width: 100%; background: #fff; line-height: 40px;}
+#card_message .card_number i{min-width:60px;color: #454545; display: block;float: left;}
+#card_message ion-content .list.bank_card{border-top:1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 10px;}
+#card_message ion-content .list.bank_card .item{border-width: 0;}
+#card_message ion-content .list.bank_card a{ color: #666;}
+#card_message  .yellow{ background: #ff7900;}
+
+/*我的喜好*/
+#my_like .bar.subheader{ height: 36px;  padding: 0;}
+#my_like .bar.subheader .row{padding: 0; margin: 0;}
+#my_like .bar.bar-subheader .row .col.col-20{text-align: center;line-height:15px; }
+#my_like .bar.bar-subheader .row .col.col-20.chose{ background: #f10000; border-radius: 22px; color: #fff;}
+#my_like ion-content .list .item{padding: 10px;}
+#my_like ion-content{ margin-top: 55px;}
+#my_like ion-content .list .button{right: 0; top:5px;}
+#my_like ion-content .list .button.hobby{ background: transparent; border: 0;}
+#my_like .list{ position:relative;overflow: hidden;margin-bottom:0;}
+#my_like .list ul{ width: 100%;margin: 10px;  height: auto;display: block; float: left;-webkit-transition:all 0.35s;transition:all 0.35s;}
+#my_like .ul-an{-webkit-transform: translate3d(0,-300px,0);position: absolute;transform:translate3d(0,-300px,0);}
+#my_like .ol-an{-webkit-transform: translate3d(0,-300px,0);position: absolute;transform:translate3d(0,-300px,0);}
+#my_like .list ul li{display: block;float: left; margin:5px 10px;}
+#my_like .list .mylabel{overflow: hidden;position: relative;}
+#my_like .list .mylabelx{overflow: hidden;position: relative;}
+#my_like .list ul li p{width: 20px; height: 20px; display: block; float:left;}
+#my_like .list ul li span{float: left; padding-left: 5px;}
+#my_like .list ul li .xz{ display: none; float: left;}
+#my_like .list ul li .mylabelx  p{ background: url("../img/personal/smile.png") no-repeat;background-size: 100%;  padding: 9px;  border-radius:50%;display: inline-block;  position: relative;}
+#my_like .list ul li .sz  p{background: url("../img/personal/smile1.png") no-repeat;background-size: 100%;}
+#my_like .list ol{ width: 100%; padding:10px;  height: auto;  display: block; float: left;border-bottom: 1px solid #ddd; margin-bottom: 20px;-webkit-transition:all 0.35s;transition:all 0.35s;}
+#my_like .list ol li{display: block;float: left; margin:5px 10px;}
+#my_like .list ol li p{width: 20px; height: 20px; display: block; float:left;}
+#my_like .list ol li span{float: left; padding-left: 5px;}
+#my_like .list ol li .xz{ display: none; float: left;}
+#my_like .list ol li .mylabel p{ background: url("../img/personal/cry.png") no-repeat;background-size: 100%;  padding: 9px;  border-radius:50%;display: inline-block;  position: relative;}
+#my_like .list ol li .sz  p{background: url("../img/personal/cry1.png") no-repeat;background-size: 100%;}
+
+
+/*退款详情--退款被拒绝*/
+#refund-refuse .top{
+	margin:10px 0;
+	background-color: #fff;
+	border-top:1px solid #d7d7d7;
+}
+#refund-refuse .top li{
+   border-bottom:1px solid #d7d7d7;
+}
+#refund-refuse .top li h5{
+	color: #ffbc00;
+	text-align: center;
+	line-height: 30px;
+}
+#refund-refuse .top li p.text{
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	color: #666666;
+}
+#refund-refuse .top li .btn{
+overflow: hidden;
+width: 66%;
+margin:10px 22% 20px;
+}
+#refund-refuse .top li .btn button{
+	border: none;
+	border:1px solid #ffbc00;
+	color: #ffbc00;
+	background-color: #fff;
+	text-align: center;
+	line-height: 24px;
+	float: left;
+	border-radius: 5px;
+	width: 100px;
+}
+#refund-refuse .top li .btn button.active{
+		color: #fff;
+	background-color: #ffbc00;
+}
+#refund-refuse .top li .btn button:last-child{
+	float: right;
+}
+#refund-refuse .top li p{
+/*	height: 50px;*/
+	padding:12px 0;
+	margin-left: 20px;
+}
+#refund-refuse .top li p a{
+	color: #ffbc00;
+}
+
+/*退款详情-申请已提交
+*/
+#apply-submit .top{
+	margin:10px 0;
+	background-color: #fff;
+	border:1px solid #d7d7d7;
+	font-size: 14px;
+}
+#apply-submit .top li:first-child{
+   border-bottom:1px solid #d7d7d7;
+}
+#apply-submit .top li h5{
+	color: #ffbc00;
+	text-align: center;
+	line-height: 30px;
+}
+
+#apply-submit .top li p{
+	padding:8px 0;
+	margin-left: 20px;
+}
+#apply-submit .top li p .mon{
+	color: #ffbc00;
+	margin-left: 15px;
+}
+#apply-submit .top li p span.one{
+	margin-left: 45px;
+}
+#apply-submit .top li p span.two{
+	margin-left: 15px;
+}
+#apply-submit .top li p.text{
+	padding-left:40px;
+}
+#apply-submit .bottom{
+	background: #fff;
+	width:100%;
+	border-top:1px solid #d7d7d7;
+}
+#apply-submit .bottom .title{
+	width:100%;
+	padding:8px 20px;
+	border-bottom:1px solid #d7d7d7;
+	margin:0;
+}
+#apply-submit .bottom .listDetails{
+	padding:14px 20px 19px 20px;
+}
+#apply-submit .bottom .listDetails .list-item.row{
+	padding:0;
+}
+#apply-submit .bottom .listDetails .list-item.row .col-10{
+	position:relative;
+	text-align:center;
+}
+#apply-submit .bottom .listDetails .list-item.row .col-10 .radius{
+	position:absolute;
+	left:5%;
+	top:4px;
+	text-align:center;
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	background:#999;
+	color:#fff;
+	z-index:2;
+}
+#apply-submit .bottom .listDetails .list-item.row .col-10 .radius.active{
+	background: #ffbc00;
+	color:#fff;
+}
+#apply-submit .bottom .listDetails .list-item.row .col-10 .line{
+	position:absolute;
+	left:10px;
+	top:24px;
+	width:1px;
+	height:80%;
+	background:#999;
+}
+#apply-submit .bottom .listDetails .list-item.row .col-10 .line.active{
+	background:#ffdc00;
+}
+#apply-submit .bottom .listDetails .list-item.row .col{
+	margin-bottom:20px;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .key{
+	font-size:12px;
+	line-height:14px;
+	height:14px;
+	color:#666;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .key.active{
+	font-weight:700;
+	color:#333;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .value{
+	font-size:10px;
+	color:#a8a8a8;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .myvalue{
+	color:#333;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .value.active{
+	color:#666;
+}
+#apply-submit .bottom .listDetails .list-item.row .col .time{
+	color:#000;
+	float:right;
+}
+/*申请退款*/
+#refund-reason .top{
+	margin:10px 0 0;
+	background-color: #fff;
+	border:1px solid #d7d7d7;
+	overflow: hidden;
+	padding:10px 30px;
+}
+#refund-reason .top .left{
+	float: left;
+}
+#refund-reason .top .right{
+   float: left;
+   margin-left: 10px;
+}
+#refund-reason .top .right h5{
+	margin:5px 0;
+}
+#refund-reason .top .right p{
+	color: #666;
+}
+#refund-reason .top .right p span.ng-binding{
+	color: #ffbc00;
+}
+#refund-reason .top .left img{
+	width:50px;
+	height: auto;
+}
+#refund-reason .center{
+	margin:0 30px;
+}
+#refund-reason .center li textarea{
+	    width: 100%;
+    height: 117px;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    padding-left: 10px;
+    resize: none;
+}
+#refund-reason .center li p{
+	line-height: 35px;
+}
+#refund-reason .center li p.ng-binding{
+	color: #ffbc00;
+}
+#refund-reason .center li p span{
+	color: #e52a2a;
+}
+#refund-reason .center li input{
+	width: 100%;
+    border:1px solid #d7d7d7;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+#refund-reason .center li select{
+	width: 100%;
+	border:1px solid #d7d7d7;
+	border-radius: 5px;
+	padding-left: 10px;
+	display: block;
+    padding-top: 2px;
+    height: 34px;
+    color: #111;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 16px;
+}
+#refund-reason .center li .box-img{
+		border:1px dashed  #d7d7d7; 
+		overflow: hidden;
+		padding: 10px;
+		border-radius: 5px;
+}
+#refund-reason .center li .box-img img{
+	display: block;
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+#refund-reason .center li .box-img span{
+	float: right;
+	display: block;
+	line-height: 50px;
+	color: #b8b8b8;
+}
+#refund-reason .center li .box-img img.last-img{
+	width: 30px;
+	height: 30px;
+	margin:0px 5px;
+	text-align: center;
+}
+#refund-reason .bott{
+		margin:20px 30px;
+		
+}
+#refund-reason .btns{
+	background-color: #ffbc00;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		width: 100%;
+		padding:8px 0;
+}
+/*商品评价*/
+.repertoire-one-img{ float: left;width: 62px; height:62px;margin-left:10px; border: 1px solid #ccc; text-align: center;}
+.repertoire-one-img img{max-width: 60px; max-height:60px;}
+.repertoire-one-wr{ width: 65%; margin: 0 10px; float: right;}
+#evaluation{ background: #F5F5F5;}
+.bar-light .fs08{ margin-left: 10px; display: inline-block;vertical-align:middle;}
+#evaluation  .evaluation-wr{ background: #fff; padding-top: 10px;}
+#evaluation textarea{width: 70%;float: right;}
+#evaluation .evaluation-class{width: 100%; padding: 0 5%; height: 40px;line-height: 40px; margin: 1px auto; background: #fff; }
+#evaluation .evaluation-class div{width: 25%;margin-left: 8%; float: left; text-align: center;}
+#evaluation .evaluation-class .eva-good{background:url("../img/order/evaluation_12.png")left center no-repeat; background-size: 25%;color: #afafae; font-size: 0.9em;}
+#evaluation .evaluation-class .eva-middle{background:url("../img/order/evaluation_13.png")left center no-repeat; background-size: 25%;color: #afafae; font-size: 0.9em;}
+#evaluation .evaluation-class .eva-bad{background:url("../img/order/evaluation_14.png")left center no-repeat; background-size: 25%;color: #afafae; font-size: 0.9em;}
+.eva-good-active{background:url("../img/order/evaluation_03.png")left center no-repeat!important; background-size: 25%!important;color: #ff534b!important;}
+.eva-middle-active{background:url("../img/order/evaluation_05.png")left center no-repeat!important; background-size: 25%!important;color: #f3c45d!important;}
+.eva-bad-active{background:url("../img/order/evaluation_07.png")left center no-repeat!important; background-size: 25%!important;color: #616161!important;}
+#evaluation .evaluation-num{ font-size: 0.9em; color: #afafae; background: #fff; padding:8px 5% 5px 5%; width: 100%;}
+#evaluation .evaluation-num span img{ margin-right: 5px; width:20px; }
+#cart-footer .left { position: relative;float: left; width: 60%;line-height: 35px; }
+#cart-footer .right { position: relative; float: right; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

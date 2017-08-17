@@ -1,0 +1,93 @@
+<ion-view view-title="新增收货人地址" id="consignee">
+  <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+    <yike-back class="return_back"></yike-back>
+    <h1 class="title high">新增收货人地址</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" scroll="false">
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>姓名:</span>
+      </div>
+      <div class="col-80">
+        <input type="text" name="con_name" placeholder="最少两个字符" ng-model="contInfo.name" minlength="2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>电话:</span>
+      </div>
+      <div class="col-80">
+        <input type="tel" name="con_tel" placeholder="不少于7位" ng-model="contInfo.tel">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>省份:</span>
+      </div>
+      <div class="col-80 mycol">
+            <!--<select id="con_select" ng-options="items.area_name for items in provinece" ng-model="items.area_id" ng-change="switchP(items.area_id)">
+            </select>-->
+            <div class="con_select" ng-click="showS('.con-pro')">
+              <span ng-bind="provineceId.area_name"></span><span class="ion ion-android-arrow-dropdown myion"></span>
+            </div>
+              <div class="con-set-cont con-pro">
+                <ion-scroll>
+                <ul>
+                  <li ng-repeat="pros in provinece" ng-click="switchP(pros)">{{pros.area_name}}</li>
+                </ul>
+                </ion-scroll>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>市区:</span>
+      </div>
+      <div class="col-80 mycol">
+        <!--<select  ng-options="itemC.area_name for itemC in country" ng-model="itemC.area_id" ng-change="switchC(itemC.area_id)">
+        </select>-->
+        <div class="con_select" ng-click="showS('.con-city')">
+          <span ng-bind="countryId.area_name"></span><span class="ion ion-android-arrow-dropdown myion"></span>
+        </div>
+        <div class="con-set-cont con-city">
+          <ion-scroll>
+            <ul>
+              <li ng-repeat="con in country" ng-click="switchC(con)"><span class="ion-ios-location-outline kgd" style="color: #bc8659;margin-right:4px;"></span>{{con.area_name}}</li>
+            </ul>
+          </ion-scroll>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>县区:</span>
+      </div>
+      <div class="col-80 mycol">
+        <!--<select  ng-options="itemCt.area_name for itemCt in city" ng-model="itemCt.area_id" ng-change="switchCt(itemCt.area_id)">
+        </select>-->
+        <div class="con_select" ng-click="showS('.con-country')">
+          <span ng-bind="cityId.area_name"></span><span class="ion ion-android-arrow-dropdown myion"></span>
+        </div>
+        <div class="con-set-cont con-country">
+          <ion-scroll>
+            <ul>
+              <li ng-repeat="cit in city" ng-click="switchCt(cit)">{{cit.area_name}}</li>
+            </ul>
+          </ion-scroll>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-20 con-span">
+        <span>地址:</span>
+      </div>
+      <div class="col-80">
+        <input type="tel" name="con_tel" placeholder="不必重复填写省市区信息" ng-model="contInfo.address">
+      </div>
+    </div>
+    <div class="shade" ng-click="hideS('.con-set-cont')"></div>
+  </ion-content>
+  <div class="bar bar-footer bar-energized" ng-click="sub()">
+    <div class="title kbh" style="color:#333;">保存并使用</div>
+  </div>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="我的门票" id="my_ticket">
+    <ion-header-bar align-title="center" class="bar bar_top my_pack bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high">我的门票</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <div class="my-ticket-box" ng-class="item.is_verify ? 'active':''" ng-repeat="item in info">
+          <div class="my-ticket-header" ng-click="open(item.sdate,item.edate,item.id,item.ticket_pid)" ng-class="item.is_verify ? 'active':''">
+            <span ng-bind="'预约时间'+ (item.subscribe_time ? item.subscribe_time :'')"></span><span class="icon ion-chevron-right" style="text-align: right;"></span>
+          </div>
+          <div class="my-ticket-cont">
+              <div class="ticket-cont-top" ng-class="item.is_verify ? 'active':''"><span style="margin-right:5px;" ng-bind="item.pname"></span><span ng-bind="item.name"></span></div>
+              <div class="ticket-cont-left">
+                  <span ng-bind="item.price" ng-class="item.is_verify ? 'active':''"></span>
+              </div>
+              <div class="ticket-cont-right">
+                  <p></p>
+                  <p>该券不能用做现金抵扣,只能做为门票入场</p>
+              </div>
+              <div class="ticket-cont-footer" ng-class="item.is_verify ? 'active':''">
+                  <span>门票码:</span> <span ng-bind="item.code"></span>
+              </div>
+          </div>
+      </div>
+        <div class="my-ticket-explain" ng-if="info">
+            <p>门票使用规则: </p>
+            <p>只有对应的种类能使用,每个种类的预约人数会有一定的限制,所以请尽快预约吧</p>
+        </div>
+    </ion-content>
+    <script id="select.html" type="text/ng-template">
+        <ion-modal-view class="select">
+            <ion-scroll>
+                <li class="list-item" ng-repeat="item in date track by $index" ng-bind="item.name" ng-click="selectTime(item.name,item.time,item.id,item.type_id)"></li>
+            </ion-scroll>
+        </ion-modal-view>
+    </script>
+</ion-view>
+
+

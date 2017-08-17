@@ -1,0 +1,120 @@
+<ion-view class="bg_color" id="tab_home">
+    <ion-header-bar align-title="center" class="bar bar_top cl">
+        <div class="buttons" style="margin-left:15px;" ng-click="showS('.con-set-cont')">
+            <button class="button button-clear button-icon home_share"></button>
+        </div>
+        <h1 class="title high" ng-click="showS('.con-set-cont')" style="font-size:13px;">{{address_name_title||'当前暂无站点'}}<span class="ion-android-arrow-dropdown distance"></span></h1>
+        <div class="buttons" style="right:20px;">
+            <button class="button button-clear ion-ios-email-outline  home_color" ui-sref="orders"></button>
+        </div>
+    </ion-header-bar>
+    <div class="bar car" ui-sref="cart">
+        <div class="shop_car">
+            <span class="ion-ios-cart-outline"></span>
+        </div>
+    </div>
+    <div class="shade-home" style="background-color:rgba(255,188,0,0.5);z-index:9998" ng-click="hideS('.con-set-cont')"></div>
+    <div class="con-set-cont con-city">
+        <ion-scroll>
+            <ul>
+                <li class="tab-home-li">切换站点</li>
+                <li ng-repeat="sites in sites" ng-click="switchC(sites)">
+                    <span class="ion-ios-location-outline kgd" style="color: #bc8659;margin-right:4px;"></span>{{sites.address}}
+                    <p>距离:{{sites.cd+'km'}}</p>
+                </li>
+            </ul>
+        </ion-scroll>
+    </div>
+    <ion-content class="has-header" overflow-scroll="true">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="slide in slides">
+                    <a>
+                        <img ng-src="{{slide.imgs}}" width="100%">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="row all_high">
+            <div class="col col-25" ui-sref="food-safe">
+                <img src="img/home/nav1.png">
+                <a>食品安全</a>
+            </div>
+            <div class="col col-25" ui-sref="xiu-home">
+                <img src="img/home/nav2.png">
+                <a>秀根之家</a>
+            </div>
+            <div class="col col-25" ui-sref="join">
+                <img src="img/home/nav3.png">
+                <a>合作加盟</a>
+            </div>
+            <div class="col col-25" ui-sref="red_bag">
+                <img src="img/home/nav4.png">
+                <a>抢红包</a>
+            </div>
+        </div>
+        <div class="package_box">
+            <div class="swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a class="move_box" ui-sref="custom">
+                            <div class="package_name fs6">套餐定制</div>
+                            <div class="package_pic">
+                                <div class="pic_bg"></div>
+                                <img src="img/home/pack1_03.png ">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="move_box" ui-sref="goods-list({id: 3})">
+                            <span class="package_name fs6">果蔬直供</span>
+                            <div class="package_pic">
+                                <div class="pic_bg"></div>
+                                <img src="img/home/pack2.png ">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="move_box" ui-sref="crop-list({id:4})">
+                            <span class="package_name fs6">DIY种植</span>
+                            <div class="package_pic">
+                                <div class="pic_bg"></div>
+                                <img src="img/home/home_diy_03.png ">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="move_box" ui-sref="strawberry">
+                            <span class="package_name fs6">采摘门票</span>
+                            <div class="package_pic">
+                                <div class="pic_bg"></div>
+                                <img src="img/home/pack1.png ">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list card1">
+            <div class="item item-avatar hot">
+                <span class="fs3">爆款推荐</span>
+            </div>
+            <div class="item item-body" ui-sref="detail({id: item.goods_id})" ng-repeat="item in dataList track by $index">
+                <img class="full-image" ng-src="{{item.image || 'img/home/recommend1.png'}}">
+                <p class="hot_name fs5 cl1">{{item.name}}</p>
+                <p class="low_price">
+                    <span class="subdued big f1">{{'￥'+item.price}}</span>
+                    <a class="subdued sm"><s>¥{{item.price * 1.2 | number: 2}}</s></a>
+                    <span class="low_price-circle">
+                        <a class="ion-ios-plus-empty" style="color:#ff7900;"></a>
+                    </span>
+                </p>
+            </div>
+            <ion-infinite-scroll  ng-if="!dataLength" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+

@@ -1,0 +1,99 @@
+<ion-view class="bg_color" id="detail">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <!--<yike-back class="return_back" ui-sref="goods-list"></yike-back>-->
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">{{data.goods.name}}</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div class="swiper-container detail-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="slide in data.rotation">
+                    <a>
+                        <img ng-src="{{slide.image}}" width="100%">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="list card1">
+            <div class="item item-body">
+                <p class="hot_name fs3 cl1">{{data.goods.name}}</p>
+                <p class="low_price">
+                    <a class="subdued big f1"><i class="fs5">¥</i>{{data.goods.price}}</a>
+                    <a class="subdued sm"><s style="color:#b4b4b4;">¥{{data.goods.price * 1.2 | number: 2}}</s></a>
+                    <!--<a class="ion-ios-plus-outline position" ng-click="add()"></a>-->
+                </p>
+            </div>
+            <div class="parameters">
+                <div class="row">
+                    <div class="col">品牌</div>
+                    <div class="col col-75 cl1">{{data.goods.brand}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">产品库存</div>
+                    <div class="col col-75 cl1" style="border-bottom:1px solid #f4f4f4;">{{data.goods.quantity}}</div>
+                </div>
+                <div class="row">
+                    <div class="col">储存方式</div>
+                    <div class="col col-75 cl1">0度储存</div>
+                </div>
+            </div>
+            <div class="detail title fs4">
+                <span></span>
+                <div class="fs3">商品详情</div>
+            </div>
+            <div class="det_pic" ng-bind-html="data.goods.description" style="text-align: center;padding-top:10px; padding-bottom:10px;">
+            </div>
+
+            <div class="detail title fs4">
+                <span></span>
+                <div class="fs3">热门评论</div>
+            </div>
+            <div class="list">
+                <div class="list-evaCont" ng-repeat="eva in evaluate">
+                    <div class="eva-header">
+                        <span class="eva-left">{{eva.nickname||'匿名'}}</span>
+                        <span class="eva-center">
+                            <img src="img/fruits/wode-hongxing.png" alt="" ng-if="eva.star>0">
+                            <img src="img/fruits/wode-hongxing.png" alt="" ng-if="eva.star>1">
+                            <img src="img/fruits/wode-hongxing.png" alt="" ng-if="eva.star>2">
+                            <img src="img/fruits/wode-hongxing.png" alt="" ng-if="eva.star>3">
+                            <img src="img/fruits/wode-hongxing.png" alt="" ng-if="eva.star>4">
+                        </span>
+                        <span class="eva-right">{{eva.comment_time*1000 |date:'yyyy-MM-dd HH:mm:ss'}}</span>
+                    </div>
+                    <div class="eva-content">
+                        <span ng-bind="eva.content"></span>
+                    </div>
+                    <div class="eva-image"></div>
+                </div>
+                <div class="list-evaCont">
+                    <div class="myButton-more" ng-click="loadMore()" ng-if="judge">加载更多评论</div>
+                    <div style="text-align: center;" ng-if="!judge">该商品暂无更多评论</div>
+                </div>
+                <!--<p style="text-align: center; margin-top: 20px;" ng-if="evaluateTF">已加载完全部数据</p>-->
+                <!--<ion-infinite-scroll  ng-if="!evaluateTF" on-infinite="loadMore()" distance="1%">-->
+                <!--</ion-infinite-scroll>-->
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-subfooter">
+        <div class="seal_buy">
+            <div class="add_goods fs4">
+                <i>添加商品：</i>
+                <span class="ion-minus-round" ng-click="remove()"></span>
+                <input type="text" ng-change="change()" ng-model="payload.quantity" id="myMoney"/>
+                <span class="ion-plus-round" ng-click="add()"></span>
+            </div>
+            <div class="buy" ui-sref="cart">
+                <i class="ion-ios-cart-outline"></i>
+                <span class="fs3">购物车</span>
+            </div>
+        </div>
+    </div>
+</ion-view>
+
+
+
+
+

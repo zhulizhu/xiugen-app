@@ -1,0 +1,32 @@
+<ion-view class="bg_color" id="login_page">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <h1 class="title high fs1">登录</h1>
+        <div class="buttons">
+            <button class="button reg fs4" ui-sref="register">注册</button>
+        </div>
+    </ion-header-bar>
+   <!-- <ion-nav-title class="title high fs1">登录</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button reg fs2" ui-sref="register">注册</button>
+    </ion-nav-buttons>-->
+    <ion-content  scroll="false" class="login_content">
+        <form  class="login_form">
+            <div class="list">
+                <label class="item item-input border">
+                    <input type="text" placeholder="输入您的手机号" ng-model="user.username">
+                </label>
+                <label class="item item-input border">
+                    <input type="password" placeholder="请输入您的密码" ng-model="user.password">
+                </label>
+            </div>
+            <button class="button button-energized yellow fs1" ng-click="login()">登录</button>
+            <div class="look_box fs4">
+                <a class="look_word" ui-sref="forget">找回密码</a>
+                <a class="message_login" ui-sref="verify">短信验证码登录</a>
+            </div>
+        </form>
+        <button class="button button-outline button-energized walk_to fs4" ui-sref="tab.home">逛一逛</button>
+    </ion-content>
+</ion-view>
+
+

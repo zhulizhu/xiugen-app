@@ -1,0 +1,74 @@
+<ion-view style="background-size: 100% 0;" view-title="提交订单" id="submit">
+    <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">提交订单</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" scroll="true">
+        <div class="row address" ng-hide="address"  ui-sref="cart-address({vary:true})" style="background:#fff;">
+            <span class="col add">添加您的收货地址</span>
+            <span class="col pk" style="text-align:right;"><i class="ion-chevron-right"></i></span>
+        </div>
+        <div class="order-address" ui-sref="cart-address({vary:true})" ng-if="address">
+            <div class="more-address ">
+                <p>
+                    <span style="float: left;">收货人:{{address.name}}</span>
+                    <span style="float: left;margin-left: 45px">电话:{{address.telephone}}</span>
+                </p>
+                <p style="height: auto;">
+                    <span>地址:{{address.address_name}}</span>
+                </p>
+                <p>
+                    <span>门牌号:{{address.remarks}}</span>
+                </p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="row zhiFu" style="padding-top:5px;">选择支付方式</div>
+        <div class="row yu2" ng-click="select(0)">
+            <span class="yu">余额支付</span>
+            <span class="yu1" ng-class="zhifu=='0'?'yux':'yuy'"></span>
+        </div>
+        <div class="row wei2" ng-click="select(1)">
+            <span class="wei">微信支付</span>
+            <span class="wei1" ng-class="zhifu=='1'?'yux':'yuy'"></span>
+        </div>
+        <div class="row zhi2" ng-click="select(2)">
+            <span class="zhi">支付宝支付</span>
+            <span class="zhi1" ng-class="zhifu=='2'?'yux':'yuy'"></span>
+        </div>
+        <div class="row send">
+            <span>配送费</span>
+            <span class="free" ng-bind="cart.transport>0?'¥'+cart.transport:'免费'"></span>
+        </div>
+        <div class="row bag" ui-sref="my_bag({id:zhifu,money:cart.total_price,type:'goSub',gId:goId})">
+            <span>优惠券抵扣</span>
+            <span ng-show="red_money" class="red" ng-class="red_money?'submit-red':''">{{red_money+'元优惠券'}}<i class="ion-chevron-right"></i></span>
+            <span ng-show="!red_money" class="red">{{'查看使用优惠券'}}<i class="ion-chevron-right"></i></span>
+        </div>
+        <div class="goods-store">
+            <div class="row store">
+                <span>商品信息</span>
+            </div>
+            <div class="row special" ng-repeat="item in cart.goods" ng-if="item.status==1">
+                <div class="col-60 gua">{{item.name}}</div>
+                <div class="col">x{{item.quantity}}</div>
+                <div class="col price">¥{{item.price}}</div>
+            </div>
+            <div class="row pei_s">
+                <div class="total"><span>商品小计 : </span><span class="num">¥{{cart.total_price}} </span></div>
+            </div>
+            <div class="row submit-yhq" ng-show="red_money">
+                <div class="submit-yhq-right"><span>优惠券抵扣 : </span><span style="color:#ff3b30;"> {{'-'+'¥'+red_money}}</span></div>
+            </div>
+            <div class="row submit-yhq">
+                <div class="submit-yhq-right">
+                    <span>配送费 : </span><span style="color:#ff3b30;">{{'¥'+ cart.transport ||'0'}}</span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer">
+        <span>应付金额 : <i class="rgq">¥{{cart.total_price+cart.transport | number: 2}}</i></span>
+        <button class="button button-energized pull-right" ng-click="pay()">确定</button>
+    </div>
+</ion-view>

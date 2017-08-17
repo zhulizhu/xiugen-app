@@ -1,0 +1,41 @@
+<ion-view view-title="发表评价" id="evaluation"  >
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title">发表评价</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="evaluation-wr">
+            <div class="repertoire-one-img">
+                <img ng-src="{{data.image}}"/>
+            </div>
+            <textarea name="" id="" cols="45" rows="5" placeholder="请写下对宝贝的感受吧，对他人帮助很大哦" ng-model="payload.cont"></textarea>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="evaluation-num">
+            给宝贝打个分数吧:
+            <span style="vertical-align: middle;">
+             <img ng-src="img/fruits/wode-hongxing.png" ng-show="payload.star > 0" ng-click="payload.star = 1">
+             <img ng-src="img/fruits/wode-hongxing.png" ng-show="payload.star > 1" ng-click="payload.star = 2">
+             <img ng-src="img/fruits/wode-hongxing.png" ng-show="payload.star > 2" ng-click="payload.star = 3">
+             <img ng-src="img/fruits/wode-hongxing.png" ng-show="payload.star > 3" ng-click="payload.star = 4">
+             <img ng-src="img/fruits/wode-hongxing.png" ng-show="payload.star > 4" ng-click="payload.star = 5">
+             <img ng-src="img/fruits/wode-huixing.png"  ng-show="payload.star < 1" ng-click="payload.star = 1">
+             <img ng-src="img/fruits/wode-huixing.png"  ng-show="payload.star < 2" ng-click="payload.star = 2">
+             <img ng-src="img/fruits/wode-huixing.png"  ng-show="payload.star < 3" ng-click="payload.star = 3">
+             <img ng-src="img/fruits/wode-huixing.png"  ng-show="payload.star < 4" ng-click="payload.star = 4">
+             <img ng-src="img/fruits/wode-huixing.png"  ng-show="payload.star < 5" ng-click="payload.star = 5">
+            </span>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-light" id="cart-footer">
+        <div class="left">
+            <div class="check checkbox" style="vertical-align:middle">
+                <input class="checkbox-one" type="checkbox" ng-click="select()">
+            </div>
+            <span class="fs08">匿名评价</span>
+        </div>
+        <div class="right" style="width: 40%">
+            <button class="button button-energized right" ng-click="evaluate()">发表评论</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

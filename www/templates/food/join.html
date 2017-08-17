@@ -1,0 +1,42 @@
+<ion-view view-title="合作加盟" id="join">
+    <!--<ion-header-bar align-title="center" class="bar bar_top straw">-->
+    <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title">合作加盟</h1>
+        <button class="button button-clear button-positive" ng-click="sub()"></button>
+    </ion-header-bar>
+    <ion-content class="has-header" scroll="true">
+        <div class="input">
+            <div><img src="img/fruits/join-d_01.png" alt="" style="width:100%;"></div>
+            <div class="join1">
+                <div style="position: relative;">
+                   <!-- <img src="img/food-img/join.png" style="display: block;"/>-->
+                    <div><img src="img/fruits/title_02.png" alt="" style="width:100%;"> </div>
+                    <div class="join-one" style="padding:10px 20px;">
+                        <div ng-bind-html="tmp" style="border:1px solid #b58300;background:#ffe692;padding:0 10px;border-radius:10px;"></div>
+                    </div>
+                    <div><img src="img/fruits/title_04.png" alt="" style="width:100%;"> </div>
+                    <div class="join-one" style="padding:10px 20px;">
+                        <div ng-bind-html="tmp" style="border:1px solid #333;background:#ffe692;padding:0 10px;border-radius:10px; "></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div><img src="img/fruits/title_06.png" alt="" style="width:100%;"> </div>
+            <div style="background: #facc05;margin-top: -15px;padding: 10px 0 20px;">
+                <div><input type="text" placeholder="请输入您的姓名" ng-model="join.name" minlength="2"/></div>
+                <div><input type="tel" placeholder="请输入您的电话" ng-model="join.phone"/></div>
+                <div><input type="text" placeholder="请输入公司的名称" ng-model="join.cname" minlength="2"/></div>
+                <div><textarea id="" cols="30" rows="5" placeholder="备注" ng-model="join.note"></textarea></div>
+                <button class="sub" ng-click="joinSub()">提交</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+
+
+

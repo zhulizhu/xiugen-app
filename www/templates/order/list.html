@@ -1,0 +1,166 @@
+<!--
+<ion-view view-title="我的订单" id="order">
+  <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+    <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+    <h1 class="title high">我的订单</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" overflow-scroll="false">
+        <ion-refresher pulling-icon="ion-load-a" spinner="bubbles" on-refresh="refresh()"  refreshing-text="加载完成...">
+        </ion-refresher>
+    <div class="row kgb order-span">
+      <span class="col"  ng-click="getSelect('0')" ng-class="data.status == '0'?'red':''">全部</span>
+      <span class="col"  ng-click="getSelect('3')" ng-class="data.status == '3'?'red':''">待付款</span>
+      <span class="col"  ng-click="getSelect('1')" ng-class="data.status == '1'?'red':''">待发货</span>
+      <span class="col"  ng-click="getSelect('4')" ng-class="data.status == '4'?'red':''">待收货</span>
+      <span class="col"  ng-click="getSelect('2')" ng-class="data.status == '2'?'red':''">待评价</span>
+    </div>
+    <div ng-repeat="order in oList ">
+      <div class="row ddd">
+        <div class="col cqd">{{order.date_added * 1000 | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+        <div class="col cbk" ng-if="order.order_status_id == '3'&&order.rights=='0'">待付款</div>
+        <div class="col cbk" ng-if="order.order_status_id == '1'&&order.rights=='0'">待发货</div>
+        <div class="col cbk" ng-if="order.order_status_id == '4'&&order.rights=='0'">待收货</div>
+        <div class="col cbk" ng-if="order.order_status_id == '2'&&order.is_evaluation=='0'&&order.rights=='0'">待评价</div>
+        <div class="col cbk" ng-if="order.order_status_id == '2'&&order.is_evaluation=='1'&&order.rights=='0'">交易完成</div>
+        <div class="col cbk" ng-if="order.rights==1">申请退款中</div>
+        <div class="col cbk" ng-if="order.rights==2">申请成功</div>
+        <div class="col cbk" ng-if="order.rights==-1">申请失败</div>
+      </div>
+
+      <div ng-repeat="orders in order.goods">
+      <div class="row gbs" style="border-bottom:1px solid #f1f1f1;">
+        <div class="col-20">
+          <img ng-src="{{orders.image}}" class="dfc"/>
+        </div>
+        <div class="col-50">{{orders.name}}</div>
+        <div class="col-33 dgg">￥{{orders.price}}<br><i>x{{orders.quantity}}</i></div>
+      </div>
+      </div>
+      <div class="row gbs">
+        <div class="col sss">合计：<span>￥{{order.total}}</span></div>
+      </div>
+      <div class="row gkk" ng-if="order.order_status_id == 3&&order.rights==0">
+        <div class="col-33"></div>
+        <div class="col-33">
+          <button class="fff ccc" ng-click="goPay(order.order_id)">去支付</button>
+        </div>
+        <div class="col-33">
+          <button class="fff aaa" ng-click="delOrder($event,order.order_id)">删除订单</button>
+        </div>
+      </div>
+
+      <div class="row gkk" ng-if="order.order_status_id == 1&&order.rights==0">
+        <div class="col-33"></div>
+        <div class="col-33" ng-if="order.rights!=-1">
+          <button class="fff ccc" ng-click="affirm(order.order_id)">确认收货</button>
+        </div>
+        <div class="col-33">
+          <button class="fff aaa" ng-click="offShop(order.order_id,order.order_status_id)">申请退款</button>
+        </div>
+      </div>
+
+      <div class="row gkk" ng-if="order.order_status_id == 4&&order.rights==0">
+        <div class="col-33"></div>
+        <div class="col-33" ng-if="order.rights!=-1">
+          <button class="fff ccc" ng-click="affirm(order.order_id)">确认收货</button>
+        </div>
+        <div class="col-33">
+          <button class="fff aaa" ng-click="offShop(order.order_id,order.goods_id)">申请退款</button>
+        </div>
+      </div>
+
+      <div class="row gkk" ng-if="order.order_status_id == 2&&order.is_evaluation==0&&order.rights==0">
+        <div class="col-33"></div>
+        <div class="col-33">
+          <button class="fff ccc"  ui-sref="evaluate({id:order.goods_id,oid:order.order_id})">去评价</button>
+        </div>
+        <div class="col-33">
+          <button class="fff aaa" ng-click="delOrder($event,order.order_id)">删除记录</button>
+        </div>
+      </div>
+    </div>
+     <div class="record" ng-if="oList.length==0 && noMoreItemsAvailable"><img src="img/no-record.png"><p>您还没有相关的定单！</p></div>
+    <ion-infinite-scroll spinner="bubbles"  ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+-->
+<ion-view view-title="我的订单" id="order">
+  <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+    <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+    <h1 class="title high">我的订单</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" overflow-scroll="true">
+    <ion-refresher pulling-icon="ion-load-a" spinner="bubbles" on-refresh="refresh()"  refreshing-text="加载完成...">
+    </ion-refresher>
+    <div class="row kgb order-span">
+      <span class="col"  ng-click="getSelect('0')" ng-class="data.status == '0'?'red':''">全部</span>
+      <span class="col"  ng-click="getSelect('3')" ng-class="data.status == '3'?'red':''">待付款</span>
+      <span class="col"  ng-click="getSelect('1')" ng-class="data.status == '1'?'red':''">待收货</span>
+      <span class="col"  ng-click="getSelect('2')" ng-class="data.status == '2'?'red':''">待评价</span>
+    </div>
+    <div ng-repeat="order in oList" ng-if="order.goods.length>0">
+      <div class="row ddd">
+        <div class="col cqd">{{order.date_added * 1000 | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+        <div class="col cbk" ng-if="order.order_status_id == '3'&&order.rights=='0'">待付款</div>
+        <div class="col cbk" ng-if="order.order_status_id == '1'&&order.rights=='0'">待发货</div>
+        <div class="col cbk" ng-if="order.order_status_id == '4'&&order.rights=='0'">待收货</div>
+        <div class="col cbk" ng-if="order.order_status_id == '2'">已完成</div>
+      </div>
+
+      <div ng-repeat="orders in order.goods">
+        <div class="order-goods-cont">
+          <div class="order-goods-image">
+            <img ng-src="{{orders.image}}" class="dfc"/>
+          </div>
+          <div class="order-goods-text">
+            <div class="row-text">
+              <span ng-bind="orders.name"></span>
+              <div style="float:right;margin-right:5px;">
+                <span ng-if="orders.rights==1" style="color:#ffdc00;">正在申请售后</span>
+                <span ng-if="orders.rights==2" style="color:#ffcc66;">退货申请成功</span>
+                <span ng-if="orders.rights==-1" style="color:#ff3b30;">退货申请失败</span>
+              </div>
+            </div>
+            <div class="row-msg"><span ng-bind="'¥'+orders.price"></span><span ng-bind="'x'+orders.quantity"></span></div>
+            <div class="row-btn">
+              <div class="row-evaluate" ng-if="order.order_status_id == 2&&orders.is_evaluation==0&&orders.rights==0" style="border-top:none;text-align: right;">
+                 <button class="fff ccc"  ui-sref="evaluate({id:orders.goods_id,oid:order.order_id})">去评价</button>
+              </div>
+              <div class="row-evaluate" ng-if="order.order_status_id == 2&&orders.is_evaluation==1||order.order_status_id == 2&&orders.rights!=0" style="border-top:none;text-align: right;">
+                <button class="fff ccc"  ui-sref="detail({id:orders.goods_id})">去逛逛</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="row gkk">
+        <div class="row-total">
+          <span ng-bind="'共'+order.goods.length+'件商品'"></span><span>合计 : ￥<i ng-bind="order.total" style="font-size:16px;"></i> </span><span ng-if="order.site_money" ng-bind="'(含运费￥'+order.site_money+')'"></span><span ng-if="!order.site_money" ng-bind="'(含运费￥0.00)'"></span>
+        </div>
+      </div>
+
+      <div class="row gkk" ng-if="order.order_status_id == 1&&order.rights==0" style="border-top:none;padding-right:5px;">
+        <div class="col-33"></div>
+        <div class="col-33">
+        </div>
+        <div class="col-33" ng-if="order.rights!=-1">
+          <button class="fff ccc" ng-click="affirm(order.order_id)">确认收货</button>
+        </div>
+      </div>
+
+      <div class="row gkk" ng-if="order.order_status_id == 3&&order.rights==0">
+        <div class="col-33"></div>
+        <div class="col-33">
+          <button class="fff ccc" ng-click="goPay(order.order_id)">去支付</button>
+        </div>
+        <div class="col-33">
+          <button class="fff aaa" ng-click="delOrder($event,order.order_id)">取消订单</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="record" ng-if="oList.length==0 && noMoreItemsAvailable"><img src="img/no-record.png"><p>您还没有相关的定单！</p></div>
+    <ion-infinite-scroll spinner="bubbles"  ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="5%" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

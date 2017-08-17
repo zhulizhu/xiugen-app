@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/food-safe.css"/>
+    <link rel="stylesheet" href="css/calendar.css">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/ngCordova.js"></script>
+    <script src="cordova.js"></script>
+    <script>
+        var platform = 'app';
+        var API_URL = "http://shop.yike1908.com/mobile";
+        var STATIC_ROOT = "http://shop.yike1908.com/";
+        var UPLOAD_ROOT = "http://shop.yike1908.com/public/uploads/";
+        var TOKEN = localStorage.getItem('TOKEN');
+        var USER = {};
+        var DEBUG = true;
+       /* var pagekt = {
+            lastTime: '',
+            count: 3
+        };
+        if (window.localStorage) {
+            if (!localStorage.getItem('redBag')) {
+                localStorage.setItem('redBag', JSON.stringify(pagekt));
+            }
+        }*/
+    </script>
+
+    <!-- your app's js -->
+    <script src="lib/yike/templates.js"></script>
+    <script src="lib/yike/release.js"></script>
+    <script src="lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="lib/leancloud-javascript-sdk/dist/av-mini.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="lib/angular-local-storage/angular-local-storage.min.js"></script>
+    <script src="lib/swiper/swiper.min.js"></script>
+    <script src="lib/jquery/calendar.js"></script>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=o0Gdma4XCc0gQD5g0xIAVOcI2d9fQdWx"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=ef6d00674605db3418c6a3979cd7a430"></script>
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+    <link href="lib/vedio/video-js.css" rel="stylesheet" type="text/css">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="lib/vedio/video.js"></script>
+    <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+    <script>
+    videojs.options.flash.swf = "lib/vedio/video-js.swf";
+    </script>
+</head>
+<body ng-app="starter">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<!-- <ion-nav-bar class="bar-stable">
+     &lt;!&ndash;<ion-nav-back-button>
+     </ion-nav-back-button>&ndash;&gt;
+ </ion-nav-bar>-->
+<!--
+  The views will be rendered in the <ion-nav-view> directive below
+  Templates are in the /templates folder (but you could also
+  have templates inline in this html file if you'd like).
+-->
+<ion-nav-view animation="slide-left-right"></ion-nav-view>
+</body>
+</html>

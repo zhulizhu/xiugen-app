@@ -1,0 +1,53 @@
+<ion-view view-title="充值" id="top-up" cache-view="false">
+  <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+    <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+    <h1 class="title high">账户充值</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" scroll="false">
+    <div class="row chose">
+      选择充值金额
+    </div>
+    <div class="list clearfix">
+      <div class="list-item"  ng-repeat="item in get_recharge_list">
+        <span class="circle" ng-class="status == item.money?'bg1':''" ng-click="select(item)"></span>
+        <span class="money" ng-bind="item.money+'元'"></span>
+        <i ng-if="item.status" ng-bind="'送'+item.gift_money"></i>
+      </div>
+    </div>
+    <div class="row cfd">
+      <div class="col-25 other">其他金额</div>
+      <div class="col-33">
+        <input type="text" class="input"
+               ng-click="select('')"
+               ng-change="getMoney()"
+               ng-model="oth_money.mon"
+               ng-class="status==''?'border':''"/>
+      </div>
+      <div class="col other1">元</div>
+    </div>
+    <div class="row zhiFu">选择支付方式</div>
+    <div class="row yu2" ng-click="select2(11)">
+      <span class="yu">微信支付</span>
+      <span class="yu1" ng-class="zhifu=='11'?'yux':'yuy'"></span>
+    </div>
+    <div class="row wei2" ng-click="select2(10)">
+      <span class="wei">支付宝支付</span>
+      <span class="wei1" ng-class="zhifu=='10'?'yux':'yuy'"></span>
+    </div>
+    <!--<div class="row zhi2" ui-sref="top-bank">
+      <span class="zhi">银联在线支付</span>
+      <span class="zhi1"></span>
+    </div>-->
+    <button class="button button-block button-positive" ng-click="sub()">
+      确认充值
+    </button>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+

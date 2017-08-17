@@ -1,0 +1,82 @@
+<!--
+<ion-view class="bg_color" id="refund-reason">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">申请退款</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <div class="top" ng-repeat="items in Shop">
+         <div class="left"><img ng-src="{{items.image}}"></div>
+         <div class="right">
+         	<h5>吉他</h5>
+         	<p>单价：<span ng-bind="items.price"></span> 数量：<span ng-bind="items.quantity"></span></p>
+         </div>      	
+      </div>
+      <div class="center">
+      	<ul>
+      		<li>
+      		   <p>退款金额 <span>※</span></p>
+             <p>￥{{Shop.total}}</p>
+      		</li>
+      		<li>
+      		   <p>退款理由</p>
+      		   <textarea type="text" name="" placeholder="最多200个字" maxlength="200" ng-model="cont.text"></textarea>
+      		</li>
+      		<li>
+      		   <p>上传凭证</p>
+      		   <div class="box-img">
+				<ul id="myUlPic">
+
+				</ul>
+                  <img class="last-img" src="img/home/photo.png" ng-click="selectImg()">
+      		   	  <span>最多上传3张图</span>
+      		   </div>
+      		</li>
+
+      	</ul>
+      </div>
+      <div class="bott"><button class="btns" ng-click="sub()">确认提交</button></div>
+	  <input type="file"  value="" id="file" multiple="multiple" accept="*/*" style="position: absolute;height:1px;width:1px;display:none;bottom:0px;">
+    </ion-content>
+</ion-view>
+-->
+<ion-view class="bg_color" id="refund-reason">
+	<ion-header-bar align-title="center" class="bar bar_top bar-energized">
+		<yike-back class="return_back" ui-sref="refunds-list"></yike-back>
+		<h1 class="title high fs1">申请退款</h1>
+	</ion-header-bar>
+	<ion-content class="has-header">
+		<div class="top">
+			<div class="left"><img ng-src="{{Shop.image}}"></div>
+			<div class="right">
+				<h5>吉他</h5>
+				<p>单价：<span ng-bind="Shop.price" style="margin-right:10px;"></span> 数量：<span ng-bind="Shop.quantity"></span></p>
+			</div>
+		</div>
+		<div class="center">
+			<ul>
+				<li>
+					<p>退款金额 <span>※</span></p>
+					<p>￥{{Shop.total}}</p>
+				</li>
+				<li>
+					<p>退款理由</p>
+					<textarea type="text" name="" placeholder="最多200个字" maxlength="200" ng-model="cont.text"></textarea>
+				</li>
+				<li>
+					<p>上传凭证</p>
+					<div class="box-img">
+						<ul id="myUlPic">
+
+						</ul>
+						<img class="last-img" src="img/home/photo.png" ng-click="selectImg()">
+						<span>最多上传3张图</span>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<div class="bott"><button class="btns" ng-click="sub()">确认提交</button></div>
+		<input type="file"  value="" id="file" multiple="multiple" accept="*/*" style="position: absolute;height:1px;width:1px;display:none;bottom:0px;">
+	</ion-content>
+</ion-view>

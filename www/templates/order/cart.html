@@ -1,0 +1,94 @@
+<ion-view view-title="购物车" id="cart">
+  <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+    <yike-back class="return_back"></yike-back>
+    <h1 class="title high">购物车</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="row address" ng-if="!data.address" ng-hide="checkSiteId>=0" ui-sref="cart-address({vary:true})">
+      <span class="col add">添加您的收货地址</span>
+      <span class="col pk"><i class="ion-chevron-right"></i></span>
+    </div>
+    <!--<div class="row int" ng-show="data.address">
+      <div class="col int1">
+        <div class="pei cart-pei">{{data.address.province+data.address.country+data.address.city}}</div>
+        <div class="pei">{{data.address.address}}</div>
+      </div>
+      <div class="col col-33 door" ui-sref="cart-address">
+        <i class="ion-chevron-right"></i>
+      </div>
+    </div>-->
+    <div class="row int" ng-if="data.address" ng-hide="checkSiteId>=0">
+      <div class="col int1">
+        <div class="pei cart-pei">{{data.address.address_name}}</div>
+        <div class="pei">{{data.address.name+'&nbsp;'+data.address.telephone+'&nbsp;'+data.address.remarks}}</div>
+      </div>
+      <div class="col-33 icon-image" ui-sref="cart-address({vary:true})">
+        <i class="ion-chevron-right"></i>
+      </div>
+    </div>
+    <div class="row int" ng-if="checkSiteId>=0">
+      <div class="col int1">
+        <div class="pei" style="line-height:40px;color:#ff6d00;">已选上门自提</div>
+      </div>
+      <div class="col col-33 door" ui-sref="cart-address">
+        <i class="ion-chevron-right"></i>
+      </div>
+    </div>
+    <div class="row int">
+      <div class="col int1">
+        <div style="font-weight:700;">配送说明</div>
+        <div class="pei">配送费  ¥{{cart.freight_money || 0}} 元</div>
+      </div>
+      <div class="col door" ng-click="openModal()" ng-hide="checkSiteId>=0">
+        <span class="door1" ng-bind="realSendTime||'选择上门时间'"></span>
+        <i class="ion-chevron-right"></i>
+      </div>
+    </div>
+    <div class="row row-goods">
+      <span class="col information">商品信息</span>
+    </div>
+    <div class="row kid kid1" ng-repeat="item in cart.goods">
+      <div class="col-33" ng-class="item.status==1?'rkg':'rkf'" ng-click="cartSelect(item)" style="padding-left:10px;display: inherit;">
+          <img ng-src="{{item.image}}"/>
+      </div>
+      <div class="col">
+        <div class="goods_name">
+           <span ng-bind="item.name"></span>
+        </div>
+        <div class="goods_outline">
+           <div class="price">
+              <span>¥{{item.price||0}}</span>
+           </div>
+           <div class="goods_check">
+              <div class="goods-circle" ng-click="remove(item)">
+                <i class="ion-minus"></i>
+              </div>
+             <span class="rky" style="float:left;">
+               <input type="text"
+                      ng-change="change(item)"
+                      ng-model="item.quantity"
+                      style="width:40px;text-align: center;line-height:26px;height:26px;"/>
+             </span>
+             <div class="goods-circle" ng-click="add(item)">
+               <i class="ion-plus"></i>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bbb" ng-if="cart.goods.length>0">
+      <div class="col-70">
+        <span class="total">
+          合计: <span class="kkk" ng-bind="'¥'+((cart.total_price+cart.freight_money)|number:2)+'元'"></span>
+          <span class="send" ng-bind="cart.freight_money != 0 ? '(含配送费'+cart.freight_money+'元)':'(不含配送费)'"></span>
+        </span>
+      </div>
+      <div class="col" ng-click="submitOrder(cart.total_price+cart.freight_money,timeSelect)">
+        <button class="number">结算</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+

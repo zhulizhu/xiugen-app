@@ -1,0 +1,41 @@
+/*登录*/
+.bar.bar_top{background-image:none;}
+.title.high{ color: #454545;}
+.buttons .button.reg{color:#b67b4a;background: transparent; border:none;}
+.login_content{width:100%; height:100%; display:block;position: relative;}
+.login_form,.reg_form,.forget_form{margin:15px auto 20px;}
+.list .item.item-input.border{ height: 47px; line-height: 47px;}
+.list label input{color: #999; font-size: 1em;}
+.list span input{color: #999; font-size: 1em;}
+.button.button-energized.yellow{width: 90%; margin:0 5%; height: 47px; line-height: 47px;}
+.look_box{width: 100%; height:47px; line-height: 47px; color: #ffbc00; }
+.look_box a{color: #ffbc00;text-decoration: none;}
+.look_box .look_word{ display: block; margin-left: 5.5%; float: left; }
+.look_box .message_login{ display: block; margin-right: 5.5%; float: right;}
+.button.button-outline.walk_to{width:30%;display:block;height: 47px; border-width: 2px; position: absolute; left:50%; margin-left:-15%;bottom:13%;}
+
+/*注册*/
+.bar.bar_top .return_back{ color:#b67b4a; width:20px;}
+.bar.bar_top .title{color: #b67b4a;}
+.item.item-input.border.cipher{margin-top: 10px;}
+.button.button-energized.gray{width: 90%; margin:0 5%; height: 47px; background-color: #c1c1c1;}
+.button.button-energized.yzm{ display: block;margin-right:5%; margin-top:0; line-height: 40px; min-height: 40px; min-width: 100px; padding: 0 6px;}
+
+/*短信验证*/
+.reg_form .agree_box{width:90%; margin:auto 5%;}
+.reg_form .agree_box .checkbox_five{float: left;}
+.checkbox_five{width: 25px; margin: 15px 10px 20px 0; position: relative;left: 0;}
+.checkbox_five .change{cursor: pointer; position: absolute; width: 25px;height: 25px; top: 0;left: 0;background: #ffbc00;  border: 2px solid #ffbc00;}
+.checkbox_five .checked::after{ content:'';opacity: 1; position: absolute;  width: 12px;  height: 7px;  background: transparent;  top: 5px;  left: 5px; border: 3px solid #fff;  border-top: none;  border-right: none;-webkit-transform: rotate(-45deg);  -moz-transform: rotate(-45deg);  -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg);}
+.agree_text{display: block; float: left;margin-top: 10px; line-height: 34px;color: #454545;}
+.agree_text a{ color: #ffbc00;}
+
+
+
+
+
+
+
+
+
+

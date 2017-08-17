@@ -1,0 +1,40 @@
+<ion-view class="bg_color" id="direct_supply">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">果蔬直供</h1>
+    </ion-header-bar>
+        <div class="swiper-container2 swiper-container-horizontal swiper-container-free-mode bar bar-subheader">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide mySwipeLike" ng-repeat="item in category" ng-if="item.id!=27" ng-hide="item.pid==27" ng-class="current.id == item.id?'chose': ''" ng-click="getSitesList(item.id)">
+                  {{item.name}}
+                </div>
+               <!-- <div class="col col-20">水果</div>-->
+           </div>
+        </div>
+    <div class="bar car" ui-sref="cart">
+        <div class="shop_car">
+            <span class="ion-ios-cart-outline"></span>
+        </div>
+    </div>
+    <ion-content class="has-header" style="bottom:20px;">
+        <ion-refresher pulling-icon="ion-load-a" spinner="bubbles" on-refresh="refresh()"></ion-refresher>
+        <div class="kind">
+            <div class="item item-body" ui-sref="detail({id: item.goods_id})" ng-repeat="item in data">
+                <div class="fruits">
+                    <img class="full-image" ng-src="{{item.image}}">
+                </div>
+                <p class="hot_name fs5 cl1">{{item.name}}</p>
+                <p class="low_price">
+                    <a class="big fs2"><i class="fs6">¥</i>{{item.price}}</a>
+                    <a class="sm fs6"><s>{{item.price * 1.2 | number: 2}}</s></a>
+                    <span class="ion-android-add circle-icon circle-right"></span>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+
+

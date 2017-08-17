@@ -1,0 +1,102 @@
+<!--
+<ion-view view-title="退款订单" class="refunds-title">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high fs1">退款订单</h1>
+    </ion-header-bar>
+
+    <ion-content >
+        <ion-refresher pulling-icon="ion-load-d" on-refresh="refresh()" refreshing-text="正在加载中.." refreshing-icon="ion-loading-b">
+        </ion-refresher>
+        <ul class="list-item">
+           <li class="item" ng-repeat="item in list">
+                <div class="box"></div>
+               <div class="content">
+                   <h1 class="title">
+                        退款编号:{{item.order_num_alias}}
+                        <span class="status" ng-if="item.status==1">申请中</span>
+                        <span class="status" ng-if="item.status==2">成功</span>
+                        <span class="status" ng-if="item.status==-1">失败</span>
+                    </h1>
+                    <div class="row item-Details" ng-repeat="goods in item.list">
+                        <div class="col">
+                            <img ng-src="{{goods.image}}" width="50" height="auto">
+                        </div>
+                        <div class="col-80 mycol">
+                            <h3 class="name" ng-bind="goods.name"></h3>
+                            <p class="infomation">
+                                <span class="single-price">单价:{{goods.price}}</span>
+                                <span class="num">数量:{{goods.quantity}}</span>
+                            </p>
+                            <p class="infomation">
+                               &lt;!&ndash; <span class="delivery-price">配送费：0.00</span>&ndash;&gt;
+                                <span class="total">总价:{{goods.price*goods.quantity}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <span class="count">共{{item.goods_quantity}}件商品</span>
+                        <span class="total-price">合计：<span class="price">¥{{item.goods_price}}</span></span>
+                        <button class="btn" ui-sref="apply-submit({id:item.list[0].order_id})">查看详情</button>
+                    </div>
+               </div>
+           </li>
+        </ul>
+        <div class="record" ng-if="list.length==0 && noMoreItemsAvailable"><img src="img/no-record.png"><p>您还没有相关的定单！</p></div>
+        <p style="text-align: center; margin-top: 40px;display: none;"  ng-if="noMoreItemsAvailable && list.length!=0">已加载全部数据</p>
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>-->
+<ion-view view-title="售后申请" class="refunds-title">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high fs1">售后申请</h1>
+    </ion-header-bar>
+
+    <ion-content overflow-scroll="true" style="background:#f3f3f3;">
+        <ion-refresher pulling-icon="ion-load-a" spinner="bubbles" on-refresh="refresh()"  refreshing-text="加载完成...">
+        </ion-refresher>
+        <div ng-repeat="order in oList" style="margin-bottom:15px;background:#fff;margin-top:5px;">
+            <div class="refunds-title-top">
+                <div class="refunds-title-top-msg">
+                    <span ng-bind="'订单编号: '+order.order_num_alias"></span><span style="float:right;margin-right:10px;color:#FFbc00;" ng-bind="'完成'"></span>
+                </div>
+                <div class="refunds-title-top-time">
+                    <span>下单时间: {{order.date_added * 1000 | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+                </div>
+            </div>
+        <div ng-repeat="orders in order.goods">
+            <div class="order-goods-cont">
+                <div class="order-goods-image">
+                    <img ng-src="{{orders.image}}" class="dfc"/>
+                </div>
+                <div class="order-goods-text">
+                    <div class="row-text">
+                        <span ng-bind="orders.name"></span>
+                        <div style="float:right;margin-right:5px;">
+                            <span ng-if="orders.rights==1" style="color:#ffdc00;">正在申请</span>
+                            <span ng-if="orders.rights==2" style="color:#ffcc66;">申请成功</span>
+                            <span ng-if="orders.rights==-1" style="color:#ff3b30;">申请失败</span>
+                        </div>
+                    </div>
+                    <div class="row-msg"><span ng-bind="'¥'+orders.price"></span><span ng-bind="'x'+orders.quantity"></span></div>
+                    <div class="row-btn">
+                        <div class="row-evaluate" ng-if="order.order_status_id == 2&&orders.is_evaluation==0&&orders.rights==0" style="border-top:none;text-align: right;">
+                            <button class="fff ccc"  style="background-color:#ddd;color:#454545;" ng-click="offShop(orders.order_id,orders.goods_id)">申请退货</button>
+                        </div>
+                        <div class="row-evaluate" ng-if="order.order_status_id == 2&&orders.is_evaluation==0&&orders.rights!=0" style="border-top:none;text-align: right;">
+                            <button class="fff ccc" ng-if="orders.rights==-1"  style="background-color:#ddd;color:#454545;" ng-click="offShop(orders.order_id,orders.goods_id)">再次申请</button>
+                            <button class="fff ccc"  style="background-color:#ddd;color:#454545;" ui-sref="apply-submit({id:orders.order_id,gid:orders.goods_id})">查看详情</button>
+                        </div>
+                        <div class="row-evaluate" ng-if="order.order_status_id == 2&&orders.is_evaluation==1" style="border-top:none;text-align: right;">
+                            <button class="fff ccc"  ui-sref="detail({id:orders.goods_id})">再去逛逛</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="record" ng-if="oList.length==0 && noMoreItemsAvailable"><img src="img/no-record.png"><p>您还没有相关的定单！</p></div>
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

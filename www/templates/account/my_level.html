@@ -1,0 +1,28 @@
+<ion-view view-title="我的等级" id="myLevel">
+    <ion-header-bar align-title="center" class="bar bar_top my_pack bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high">我的等级</h1>
+    </ion-header-bar>
+    <ion-content >
+        <div class="level-cont">
+            <div class="level-msg">
+                <p>Lv.{{Level.name||1}}</p>
+            </div>
+        </div>
+        <div class="level-range">
+            <p>距离下一等级:</p>
+            <p>还需<i ng-bind="Level.money||'0'"></i>消费金额</p>
+        </div>
+        <div class="level-pro">
+            <p></p>
+            <div class="pro">
+                <div class="pro-line"></div>
+            </div>
+            <p><span></span><span></span></p>
+        </div>
+        <div class="level-title">
+            <p>在线消费可以获得更多的经验</p>
+            <p>等级可以解锁更多的福利哟</p>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,72 @@
+<ion-view view-title="我的套餐" id="order">
+    <ion-header-bar align-title="center" class="bar bar_top my_pack bar-energized">
+        <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+        <h1 class="title high">套餐定制</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" style="bottom:44px;">
+        <div class="empty row" ng-if="!packageList.length">
+            <div class="img col-center">
+                <img src="img/tabs/empty_03.png" alt="" width="90" height="90">
+            </div>
+        </div>
+        <!--遍历的dom-->
+        <div class="my_pack-cont" ng-if="pack.length" ng-repeat="pack in packageList track by $index">
+            <div ng-click="x=!x" style="border:1px solid #ebebeb;">
+                <div class="row ddd">
+                    <div class="col cqd">{{pack.pay_time*1000 |date:"yyyy-MM-dd HH:mm:ss"}}</div>
+                    <div class="col cbk"></div>
+                </div>
+                <div class="row gbs">
+                    <div class="col-20">
+                        <!--<img src="img/food-img/order.png" class="dfc"/>-->
+                        <img ng-src="{{pack.image}}" class="dfc"/>
+                    </div>
+                    <div class="col-50">{{pack.name}}({{pack.pay_subject}})</div>
+                    <div class="col-30 dgg">￥{{pack.price}}<br><i>x1</i></div>
+                </div>
+                <div class="row gbs" style="text-align: center;">
+                    <span class="ion-ios-arrow-down" style="width:100%;font-size:20px;"></span>
+                </div>
+            </div>
+
+            <!--点击隐藏的部分-->
+            <div ng-show="x">
+                <div class="row start">
+                    <span class="begin">开始</span>
+                    <span>{{pack.start_time*1000|date:"yyyy-MM-dd"}}</span>
+                    <span class="number">————</span>
+                    <span class="end">结束</span>
+                    <span>{{pack.end_time*1000|date:"yyyy-MM-dd"}}</span>
+                </div>
+                <div class="row egg"
+                     ui-sref="delivery-count({id:pack.goods_id,oid:pack.order_id,count:pack.remaining_times,start:pack.start_time,end:pack.end_time})">
+                    <span class="col">剩余配送次数</span>
+                <span class="col">
+                    <i class="ion-chevron-right klg"></i>
+                    <span class="kbg">{{pack.remaining_times}}次</span>
+                </span>
+                </div>
+                <div class="row egg" ui-sref="delivery-send({id:detail.goods_id,oid:pack.order_id})">
+                    <span class="col">已配送次数</span>
+                    <span class="col">
+                        <i class="ion-chevron-right klg"></i>
+                        <span class="kbg">{{pack.delivered_times}}次</span>
+                    </span>
+                </div>
+                <div class="row bc" style="border-top:none;">
+                <span class="col">收货人：<span>{{pack.address.name}}&nbsp;&nbsp;<i
+                        style="color:#9A9691">{{pack.address.telephone}}</i></span></span><br>
+                </div>
+                <div class="row bg">
+                    <!--<span class="bj" style="margin-bottom: 45px">{{address.province+address.country+address.city+address.address}}</span>-->
+                    <span class="bj" style="margin-bottom: 15px;font-size:14px; ">{{pack.address.address_name+' '+pack.address.remarks}}</span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-energized" ng-if="!packageList.length">
+        <div class="title kbh" ui-sref="tab.package" style="color:#333;">立即添加</div>
+    </div>
+</ion-view>
+
+

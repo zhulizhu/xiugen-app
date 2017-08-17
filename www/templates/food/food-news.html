@@ -1,0 +1,38 @@
+<ion-view view-title="食品安全新闻" id="food-news">
+  <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+    <yike-back class="return_back" ui-sref="food-safe"></yike-back>
+    <h1 class="title high">{{title}}</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <!--视频的嵌入-->
+    <div>
+        <video id="example_video_1" class="video-js vjs-default-skin" ng-src="{{videoUrl(items[0].source)}}"  width="100%" height="264" controls="controls" >  
+  
+                      </video>  
+    </div>
+    <div class="item start">{{items[0].content}}</div>
+    <div class="gbb" >
+    <div class="list" ng-repeat="item in items" ui-sref="food({id:item.id})">
+      <a class="item item-thumbnail-left gbk">
+        <img ng-src="{{item.thumb || 'img/food-img/safe.png'}}">
+        <h2>{{item.content}}</h2>
+<!--         <h2>标题</h2> -->
+      </a>
+    </div>
+    <!-- <div class="list">
+      <a class="item item-thumbnail-left gbk">
+        <img src="img/food-img/news.png">
+        <h2>标题标标题标题标题标题</h2>
+        <h2>标题</h2>
+      </a>
+    </div>
+    <div class="list last">
+      <a class="item item-thumbnail-left gbk">
+        <img src="img/food-img/news.png">
+        <h2>标题标标题标题标题标题</h2>
+        <h2>标题</h2>
+      </a>
+    </div> -->
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,70 @@
+<ion-view view-title="秀根之家" id="my-home" class="bg_color">
+  <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+    <yike-back class="return_back" ui-sref="tab.home"></yike-back>
+    <h1 class="title high">秀根之家</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div>
+      <ul class="list">
+        <li class="item" ui-sref="introduce">
+          <div>
+          <img src="img/food-img/comapany.png"/>
+          <span class="text-t">公司介绍</span>
+          <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item"  ui-sref="brand">
+          <div>
+            <img src="img/food-img/introduce.png"/>
+            <span class="text-t">品牌介绍</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item" ui-sref="team-introduce">
+          <div>
+            <img src="img/food-img/team.png"/>
+            <span class="text-t">团队介绍</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item"  ui-sref="teach">
+          <div>
+            <img src="img/food-img/zhongzhi.png"/>
+            <span class="text-t">种植技术</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item"  ui-sref="detection">
+          <div>
+            <img src="img/food-img/report.png"/>
+            <span class="text-t">检测报告</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item"  ui-sref="product">
+          <div>
+            <img src="img/food-img/show.png"/>
+            <span class="text-t">产品展示</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item talk" ui-sref="join">
+          <div>
+            <img src="img/food-img/talk.png"/>
+            <span class="text-t">合作洽谈</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+        <li class="item talk" ng-click="select()" ng-if="TOKEN">
+          <div>
+            <img src="img/food-img/custom.png"/>
+            <span class="text-t">客户留言</span>
+            <span class="ion-chevron-right text-b"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>
+
+

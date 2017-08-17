@@ -1,0 +1,118 @@
+<!--
+<ion-view class="bg_color" id="package_details">
+    <ion-header-bar align-title="center" class="bar bar_top">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">套餐详情</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div ng-repeat="item in category">
+        <div class="item item-body">
+            <img class="full-image" ng-src="{{item.picture}}">
+            <div class="hot_name fs5 cl2"><i class="cl1 fs2">{{item.name}}</i></div>
+        </div>
+        <div class="sorts">
+            <div class="row fs4">
+                <div class="col col-33" ng-click="getList(cat)" ng-class="index == $index ? 'active': ''"  ng-repeat="cat in item.class"><span>{{cat.pname}}</span></div>
+            </div>
+            <div class="parameters">
+                <div class="row">
+                    <div class="col">配送次数：</div>
+                    <div class="col col-75 cl1">{{data.ptime}}次</div>
+                </div>
+                <div class="row">
+                    <div class="col">配送数量：</div>
+                    <div class="col col-75 cl1">{{data.pweight}}kg</div>
+                </div>
+                <div class="row">
+                    <div class="col">品种数量：</div>
+                    <div class="col col-75 cl1">{{data.pnum}}种</div>
+                </div>
+                <div class="row">
+                    <div class="col">赠送说明：</div>
+                    <div class="col col-75 cl1 hang" ng-bind-html="data.state">
+                    </div>
+                </div>
+            </div>
+            <div class="sorts explain">
+                <div class="title fs4">
+                    <div class="row">
+                        <div class="col col-33 mycol" style="text-align: left">购买须知</div>
+                        <div class="col col-60 cl1 line"></div>
+                   </div>
+                </div>
+                <div class="parameters">
+                    <div class="row">
+                        <div class="col col-33">有效说明：</div>
+                        <div class="col col-60 cl1 hang">暂无</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-subfooter">
+        <div class="seal_buy">
+            <div class="col col-50 fs5">季度<i class="fs1">￥{{data.price}}</i></div>
+            <div class="buy fs2" ng-click="add()">立即购买</div>
+        </div>
+    </div>
+</ion-view>
+-->
+<ion-view class="bg_color" id="package_details">
+    <ion-header-bar align-title="center" class="bar bar_top">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">套餐详情</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div ng-repeat="item in category">
+        <div class="item item-body">
+            <img class="full-image" ng-src="{{data.goods.image}}">
+            <div class="hot_name fs5 cl2"><i class="cl1 fs2">{{data.goods.name}}</i></div>
+        </div>
+        <div class="sorts">
+            <div class="row fs4">
+                <div class="col col-33" ng-class="cat.goods_id == id ? 'active': ''" ui-sref="package_details({id: cat.goods_id})" ng-repeat="cat in data.category"><span>{{cat.name}}</span></div>
+            </div>
+            <div class="parameters">
+                <div class="row">
+                    <div class="col">配送次数：</div>
+                    <div class="col col-75 cl1">{{data.ptime||10}}次</div>
+                </div>
+                <div class="row">
+                    <div class="col">配送数量：</div>
+                    <div class="col col-75 cl1">{{data.pweight||10}}kg</div>
+                </div>
+                <div class="row">
+                    <div class="col">品种数量：</div>
+                    <div class="col col-75 cl1">{{data.pnum||1}}种</div>
+                </div>
+                <div class="row">
+                    <div class="col">赠送说明：</div>
+                    <div class="col col-75 cl1 hang" ng-bind-html="data.goods.description"></div>
+            </div>
+            <div class="sorts explain">
+                <div class="title fs4">
+                    <div class="row">
+                        <div class="col col-33 mycol" style="text-align: left">购买须知</div>
+                        <div class="col col-60 cl1 line">暂无</div>
+                   </div>
+                </div>
+                <div class="parameters">
+                    <div class="row">
+                        <div class="col col-33">有效说明：</div>
+                        <div class="col col-60 cl1 hang">套餐购买可自行选择配送时间,总共10次配送,取消配送之后,次数自动延后</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+            </div>
+    </ion-content>
+    <div class="bar bar-subfooter">
+        <div class="seal_buy">
+            <div class="col col-50 fs5">季度<i class="fs1">￥{{data.goods.price}}</i></div>
+            <div class="buy fs2" ui-sref="package-pay({id:id})">立即购买</div>
+        </div>
+    </div>
+</ion-view>
+

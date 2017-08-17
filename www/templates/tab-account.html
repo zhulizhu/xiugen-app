@@ -1,0 +1,105 @@
+<ion-view view-title="我的" id="my">
+    <ion-header-bar align-title="center" class="bar bar_top cl">
+        <div class="header-bar-box">
+            <div class="head_box" ui-sref="person">
+                <img class="header-image" ng-src="{{data.userpic}}" src="img/personal/head_img.png">
+            </div>
+            <div class="header-bar-title">
+                <div class="header-my-span"><span class="reg_member"  ng-bind="data.username?data.username:'未登录'"></span></div>
+                <div ng-if="!data.username" ui-sref="register" class="header-my-bg"><span>注册会员</span></div>
+                <div ng-if="data.username" class="header-my-bg">
+                    <span ng-bind="'余额:'+data.money+'元'"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header-my-buttons" ng-if="!data.username" ui-sref="login">
+         <button class="button button-clear ion-ios-arrow-forward  home_color"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true">
+        <div class="my_order my_order_font">
+            <div class="my_order_top">
+                <h3>我的订单</h3>
+                <div class="buttons" ui-sref="orders" ng-click="stateGo('orders')">
+                    <span>查看全部订单</span>
+                    <button class="button button-icon ion-ios-arrow-forward fs3"></button>
+                </div>
+            </div>
+            <div class="row all_high">
+                <div class="col col-25" ui-sref="orders({status: 3})">
+                    <img src="img/personal/wait1.png">
+                    <a>待付款</a>
+                </div>
+                <div class="col col-25" ui-sref="orders({status: 4})">
+                    <img src="img/personal/wait2.png">
+                    <a>待收货</a>
+                </div>
+                <div class="col col-25" ui-sref="orders({status: 2})">
+                    <img src="img/personal/wait3.png">
+                    <a>待评价</a>
+                </div>
+                <div class="col col-25" ui-sref="refunds-list" ng-click="stateGo('refunds-list')">
+                    <img src="img/personal/wait4.png">
+                    <a>退款/售后</a>
+                </div>
+            </div>
+        </div>
+        <div class="my_order">
+            <div class="my_order_top">
+                <h3>我的钱包</h3>
+            </div>
+            <div class="row all_high wallet">
+                <div class="col col-33" ui-sref="top-up" ng-click="stateGo('top-up')">
+                    <span><i></i>¥{{data.money||0}}</span>
+                    <a>充值</a>
+                </div>
+                <div class="col col-33" ui-sref="my_bag" ng-click="stateGo('my_bag')">
+                    <span>{{data.packet||0}}</span>
+                    <a>优惠券</a>
+                </div>
+                <div class="col col-33" ng-click="stateGo('integral')">
+                    <span>{{data.points||0}}</span>
+                    <a>积分</a>
+                </div>
+            </div>
+        </div>
+        <div class="my_order my_order_font">
+            <div class="row all_high link">
+                <div class="col col-25" ng-click="stateGo('my-package')">
+                    <img src="img/personal/link1.png">
+                    <a>我的套餐</a>
+                </div>
+                <div class="col col-25" ng-click="stateGo('cart')">
+                    <img src="img/personal/link2.png">
+                    <a>购物车</a>
+                </div>
+                <div class="col col-25" ng-click="stateGo('cart-address')">
+                    <img src="img/personal/link3.png">
+                    <a>收货地址</a>
+                </div>
+                <div class="col col-25" ng-click="stateGo('my-code')">
+                    <img src="img/personal/link4.png">
+                    <a>二维码</a>
+                </div>
+            </div>
+            <div class="row all_high link">
+                <div class="col col-25" ng-click="stateGo('my-ticket')">
+                    <img src="img/titket.png">
+                    <a>我的门票</a>
+                </div>
+                <div class="col col-25" ng-click="stateGo('my_like')">
+                    <img src="img/personal/link5.png">
+                    <a>我的喜好</a>
+                </div>
+                <div class="col col-25" ng-click="stateGo('level')">
+                    <img src="img/personal/link6.png">
+                    <a>我的等级</a>
+                </div>
+                <div class="col col-25" ng-click="loginOut()">
+                    <img src="img/personal/login_out.png">
+                    <a>退出登陆</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

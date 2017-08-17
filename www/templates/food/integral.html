@@ -1,0 +1,32 @@
+<ion-view view-title="积分" id="integral">
+  <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+    <yike-back class="return_back"></yike-back>
+    <h1 class="title">积分</h1>
+  </ion-header-bar>
+  <ion-content class="has-header" style="bottom:20px;" overflow-scroll="false">
+    <ion-refresher pulling-icon="ion-load-d" on-refresh="refresh()" refreshing-text="正在加载中.." refreshing-icon="ion-loading-b">
+    </ion-refresher>
+    <div class="current1">
+      <div class="current">
+        <div class="current2">当前积分</div>
+        <div class="current3">{{allPoint||0}}</div>
+      </div>
+      <div class="current4">
+        <span>积分明细</span>
+      </div>
+    </div>
+    <div class="row rky" ng-repeat="item in list" ng-if="allPoint">
+      <span class="col col-50 rgy">{{item.pay_time*1000 | date:"yyyy-MM-dd HH:mm:ss"}}</span>
+      <span class="col col-20 rgd" style="line-height:30px;" ng-bind="'+'+item.return_points"></span>
+      <span class="col col-30 rgk" style="overflow: hidden;max-height: 50px;line-height:30px;text-align: center;" ng-bind="item.goods_name.substr(0,5)"></span>
+    </div>
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+

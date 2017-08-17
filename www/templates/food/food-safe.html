@@ -1,0 +1,21 @@
+<ion-view view-title="食品安全" id="food">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ui-sref="tab.home"></yike-back>
+        <h1 class="title high">食品安全</h1>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div ng-repeat="item in list" ui-sref="food-news({title:item.title})">
+            <div class="item item-divider danger">
+                <span ng-bind-html="item.title"></span>
+                <i class="ion-chevron-right reb"></i>
+            </div>
+            <div>
+                <!-- <img ng-src="{{item.thumb || 'img/food-img/safe.png'}}" style="width:100%"/> -->
+                      <video id="example_video_1" class="video-js vjs-default-skin" ng-src="{{videoUrl(item.source) || 'img/food-img/safe.png'}}"  width="100%" height="264" controls="controls" >  
+  
+                      </video>  
+            </div>
+            <div class="item rgk">{{item.content}}</div>
+        </div>
+    </ion-content>
+</ion-view>

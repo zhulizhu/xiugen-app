@@ -1,0 +1,35 @@
+<ion-view class="bg_color" id="custom">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back" ui-sref="tab.home"></yike-back>
+        <h1 class="title high">套餐定制</h1>
+    </ion-header-bar>
+   <ion-content class="has-header">
+        <div class="item item-body" ng-repeat="cat in category">
+            <img class="full-image" ng-src="{{data[cat.id][data[cat.id]['checkIndex']]['image']}}" ui-sref="package_details({id: data[cat.id][data[cat.id]['checkIndex']].goods_id})">
+            <div class="hot_name fs5 cl2">—&nbsp;<i class="cl1 fs1">{{cat.name}}</i>&nbsp;—
+             <div class="low_price">
+                <div class="checkbox_y" ng-click="data[cat.id]['checkIndex'] = $index" ng-repeat="item in data[cat.id] track by $index" ng-class="data[cat.id]['checkIndex'] == $index?'active':''">
+                    <label>{{item.name}}</label>
+                </div>
+               <!-- <a class="ion-android-add circle-icon circle-right" ng-click="add(data[cat.id][data[cat.id]['checkIndex']])"></a>-->
+               <a class="ion-android-add circle-icon circle-right" ui-sref="package-pay({id:data[cat.id][data[cat.id]['checkIndex']].goods_id})"></a>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+   <!-- <ion-content class="has-header">
+        <div class="item item-body" ng-repeat="cat in category">
+            <img class="full-image" ng-src="{{cat.picture}}">
+            <div class="hot_name fs5 cl2">—&nbsp;<i class="cl1 fs1">{{cat.name}}</i>&nbsp;—</div>
+            <div class="low_price">
+                <div class="checkbox_y" ng-click="getSelect(item)" ng-repeat="item in cat.class" ng-class="index==$index&&$parent.$index==parentIndex?'active':''">
+                    <label>{{item.pname}}</label>
+                </div>
+                <a class="ion-ios-plus-outline position" ui-sref="package_details({id:cat.id,pid:pid})"></a>
+            </div>
+        </div>
+    </ion-content>-->
+</ion-view>
+
+
+

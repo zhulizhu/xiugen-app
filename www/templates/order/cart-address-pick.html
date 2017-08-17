@@ -1,0 +1,26 @@
+<ion-view view-title="定位置" id="add-address">
+    <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">秀根自提点</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" style="margin-bottom:44px;">
+        <div>
+            <div class="item item-divider tb" ng-if="ztFT">附近暂无自提点</div>
+            <div class="item" ng-repeat="res in sites" ng-click="titSelect(res)">
+                <div style="position:absolute;right: 0;top: 0;width: 60px;" ng-if="check==res.id"><img src="img/red_bag/left-check.png" alt=""> </div>
+                <div style="overflow: hidden;">
+                    <div style="float:left;"><span>秀根自提点</span></div>
+                    <div style="float:right;">
+                        <span class="ion-ios-location-outline kgd" style="font-size:20px;"></span>
+                        <span style="font-size:13px;">{{res.cd+'km'}}</span>
+                    </div>
+                </div>
+                <p style="padding:10px 0;"><span class="kgy">{{res.address}}</span></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+

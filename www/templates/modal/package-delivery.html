@@ -1,0 +1,17 @@
+<div class="cart-shade" ng-click="closeModal()"></div>
+<div class="delivery">
+    <div class="delivery-top">
+        <div class="row">
+            <div class="col col-20" ng-click="closeModal()">返回</div>
+            <div class="col col-60">请选择配送时间</div>
+            <div class="col col-20" ng-click="closeModal()">确定</div>
+        </div>
+    </div>
+    <div class="delivery-cont">
+        <ion-scroll>
+            <div class="list">
+                <div class="item"  ng-click="selected(item,this)" ng-repeat="item in time track by $index" ng-bind="item.time + '&nbsp;提前'+item.days+'天预定'"></div>
+            </div>
+        </ion-scroll>
+    </div>
+</div>

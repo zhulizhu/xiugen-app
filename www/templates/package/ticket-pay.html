@@ -1,0 +1,82 @@
+<ion-view view-title="门票订单" id="package-pay">
+    <ion-header-bar align-title="center"  class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">门票订单</h1>
+    </ion-header-bar>
+    <ion-content>
+       <!-- <div class="row address" ui-sref="cart-address({vary:false,package:true})" style="background:#fff;">
+            <span class="col add">更改绑定电话</span>
+            <span class="col pk" style="text-align:right;"><i class="ion-chevron-right"></i></span>
+        </div>-->
+        <div class="order-address" ng-if="userInfo" ui-sref="reset-phone">
+            <div class="more-address ">
+                <p>
+                  <span style="float: left;">联系电话:</span><span style="float: left;margin-left: 45px" ng-bind="userInfo.telephone"></span>
+                </p>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="order-listing" >
+            <div class="account-list">
+                <div class="account-tit" style="margin-top: 5px">
+                    <span class="fl" style="font-size: 16px;padding: 5px;margin: 5px;">支付方式</span>
+                    <span class="fr account-more"></span>
+                </div>
+            </div>
+            <ul>
+                <li class="row" style="border-bottom: 1px solid #DDDDDD;margin:0;padding:10px">
+                    <img src="img/food-img/submit2.png" width="35" height="35" class="col-15"/>
+
+                    <div class="col" style="font-size: 16px;">微信支付</div>
+                    <label class="checkbox col-15">
+                        <input type="radio" name="payment" ng-click="select('1')">
+                    </label>
+                </li>
+                <li class="row" style="border-bottom: 1px solid #DDDDDD;margin:0;padding:10px">
+                    <img src="img/food-img/submit3.png" width="35" height="35" class="col-15"/>
+
+                    <div class="col" style="font-size: 16px;">支付宝</div>
+                    <label class="checkbox col-15">
+                        <input type="radio" name="payment" ng-click="select('2')">
+                    </label>
+                </li>
+                <li class="row" style="border-bottom: 1px solid #DDDDDD;margin:0;padding: 10px">
+                    <img src="img/food-img/submit1.png" width="35" height="35" class="col-15"/>
+
+                    <div class="col" style="font-size: 16px;">余额支付</div>
+                    <label class="checkbox col-15">
+                        <input type="radio" name="payment" ng-click="select('0')" ng-checked="true">
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="row " style="background-color: #fff;border-bottom:1px solid #ececec;">
+            <div class="col ">
+                <div class="select-time" >门票规则</div>
+                <p style="font-size:13px;margin:10px 0 0;">门票购买之后,将自己预约日期</p>
+            </div>
+        </div>
+        <div class="cargo-information" style="padding: 10px;margin-bottom: 10px;border-bottom:1px solid #ececec;">
+            <p class="comm-title">商品详情</p>
+            <ul>
+                <li class="goods-list">
+                    <span ng-bind="detail.name"></span>
+                    <span style="text-align: center;">x1</span>
+                    <span style="color: #ff3b30;" ng-bind="'¥'+detail.price">0</span>
+                </li>
+                <!-- <li class="goods-list" style="text-align: right">
+                     商品小计：<i style="color: #ff3b30;">¥18</i>
+                 </li>
+                 <li class="goods-list" style="text-align: right">
+                     配送费：<i style="color: #ff3b30;">¥0</i>
+                 </li>
+                 <li class="goods-list" style="text-align: right">
+                     总计：<i style="color: #ff3b30;">¥0</i>
+                 </li>-->
+            </ul>
+        </div>
+    </ion-content>
+    <ion-footer-bar style="background:#ff7900;" ng-click="submitOrder()">
+        <div class="title" >立即购买</div>
+    </ion-footer-bar>
+</ion-view>

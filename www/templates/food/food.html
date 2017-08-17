@@ -1,0 +1,26 @@
+<ion-view view-title="{{data.title}}" id="food">
+  <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+    <yike-back class="return_back" ui-sref="food-safe"></yike-back>
+   <!--  <h1 class="title"></h1> -->
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <h4 style="text-align: center;">{{itemx.content}}</h4>
+<!--     <img ng-src="{{itemx.thumb || 'img/food-img/safe.png'}}" style="width:100%"/> -->
+<!--   <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="264"
+      
+      data-setup="{}">
+    <source ng-src="{{videoUrl(itemx.source)}}" type='video/mp4' /> -->
+<!--     <source ng-href="{{itemx.source}}" type='video/webm' />
+    <source ng-href="{{itemx.source}}" type='video/ogg' /> -->
+<!--     <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track> -->
+    <!-- Tracks need an ending tag thanks to IE9 -->
+<!--     <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track> -->
+    <!-- Tracks need an ending tag thanks to IE9 -->
+<!--   </video> -->
+      <video id="example_video_1" class="video-js vjs-default-skin" ng-src="{{videoUrl(itemx.source)}}"  width="100%" height="264" controls="controls" >  
+  
+    </video>  
+    <div class="padding" ng-bind-html="itemx.content1">
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,58 @@
+<ion-view class="bg_color" id="my_like">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">我的喜好</h1>
+    </ion-header-bar>
+    <div class="swiper-container3 swiper-container-horizontal swiper-container-free-mode bar bar-subheader">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide mySwipeLike mySwipe" style="width:33%;" ng-repeat="item in current" ng-class="index == $index ? 'chose' : ''" ng-click="getData(item.id,item)">{{item.name}}</div>
+            </div>
+    </div>
+    <ion-content class="has-header">
+        <form class="which_like">
+            <div class="list">
+                <div class="item item-button-right">
+                    喜欢的{{titleName}}
+                    <button class="button hobby" ng-click="fold()">
+                        <i class="myUIcon icon ion-ios-arrow-down"></i>
+                    </button>
+                </div>
+                <ul class="likeUl">
+                   <li ng-repeat="itemx in detail">
+                       <div class="mylabelx" ng-class="itemx.checked==1&&itemx.type==1?'sz':''" ng-click="getSelectL(itemx)">
+                       <p></p>
+                       <span>{{itemx.name}}</span>
+                       </div>
+                   </li>
+                </ul>
+            </div>
+            <div class="list">
+                <div class="item item-button-right">
+                    不喜欢的{{titleName}}
+                    <button class="button hobby" ng-click="fold2()">
+                        <i class="myOIcon icon ion-ios-arrow-down"></i>
+                    </button>
+                </div>
+                <ol class="likeOl">
+                    <li ng-repeat="itemd in detail">
+                        <div class="mylabel" ng-class="itemd.checked==1&&itemd.type==2?'sz':''" ng-click="getSelect(itemd)">
+                        <p></p>
+                        <span>{{itemd.name}}</span>
+                        </div>
+                    </li>
+                   <!-- <li>
+                        <input type="checkbox" class="xz" id="dislike6">
+                        <label for="dislike6"></label>
+                        <span>苹果</span>
+                    </li>-->
+                </ol>
+            </div>
+        </form>
+        <!--<button class="button button-energized yellow fs1" ui-sref="my-hobby({id:id})">提交</button>-->
+    </ion-content>
+</ion-view>
+
+
+
+
+

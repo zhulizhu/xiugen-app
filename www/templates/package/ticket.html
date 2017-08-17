@@ -1,0 +1,27 @@
+<ion-view class="bg_color" id="custom">
+  <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+    <yike-back class="return_back" ui-sref="tab.account"></yike-back>
+    <h1 class="title high fs1">采摘门票</h1>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <div class="item item-body" ng-repeat="cat in category">
+      <!--{{data}}-->
+      <!--{{cat}}-->
+
+      <!--<img class="full-image" ng-src="{{data[cat.id][data[cat.id]['checkIndex']]['image']}}" ui-sref="package_details({pid: pid, id: data[cat.id][data[cat.id]['checkIndex']].goods_id})">-->
+      <img class="full-image" ng-src="{{data[cat.id][data[cat.id]['checkIndex']]['image']}}">
+      <div class="hot_name fs5 cl2">—&nbsp;<i class="cl1 fs1">{{cat.name}}</i>&nbsp;—</div>
+      <div class="low_price">
+        <div class="ticket" ng-click="data[cat.id]['checkIndex'] = $index" ng-repeat="item in data[cat.id] track by $index" ng-class="data[cat.id]['checkIndex'] == $index?'active':''">
+          <labe>{{item.name}}</labe>
+        </div>
+        <a class="ion-android-add circle-icon circle-right" ui-sref="ticket-pay({id:data[cat.id][data[cat.id]['checkIndex']].goods_id,pid:data[cat.id][data[cat.id]['checkIndex']].category_id})"></a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+
+
+

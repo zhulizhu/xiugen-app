@@ -1,0 +1,61 @@
+<ion-view view-title="定位置" id="add-address">
+  <ion-header-bar align-title="center" class="bar bar_top straw" style="border-bottom:1px solid #f7e09f;">
+    <yike-back class="return_back"></yike-back>
+    <div class="gbq">
+      <button class="gqq"  ng-click="select(1)" ng-class="status==1?'gqqh':'gqqf'">送货上门</button><button class="gky" ng-click="select(2)"  ng-class="status==2?'gqqh':'gqqf'">店铺自提</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-header" style="margin-bottom:44px;">
+    <div class="kdc" ng-if="!address">
+      <img src="img/food-img/position.png"/>
+      <p>还没地址哦!</p>
+    </div>
+      <div ng-if="status==2">
+        <div class="item item-divider tb" ng-if="ztFT">附近暂无自提点</div>
+        <div class="item" ng-repeat="res in sites">
+          <div style="overflow: hidden;">
+            <div style="float:left;"><span>秀根自提点</span></div>
+            <div style="float:right;">
+              <span class="ion-ios-location-outline kgd" style="font-size:20px;"></span>
+              <span style="font-size:13px;">{{res.cd+'km'}}</span>
+            </div>
+          </div>
+          <p style="padding:10px 0;"><span class="kgy">{{res.address}}</span></p>
+        </div>
+      </div>
+    <div class="item"  ng-repeat="item in address" ng-if="status==1">
+      <div class="div" ui-sref="modify-address({id:item.address_id})">
+      <div class="row">
+        <div class="col-30">
+          <p ng-bind="item.name"></p>
+        </div>
+        <div class="col-40 col-offset-10">
+          <p ng-bind="item.telephone"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-100">
+          <p >
+            <span ng-bind="item.province"></span><span ng-bind="item.country"></span><span ng-bind="item.city"></span><span ng-bind="item.address"></span>
+          </p>
+        </div>
+      </div>
+      </div>
+      <div class="row addrow">
+          <div class="col-40" ng-click="select2(item.address_id)">
+            <p><span class="yu1" ng-class="item.default==1?'yux':'yuy'"></span><span class="addrow-span">设为默认</span></p>
+          </div>
+          <div class="col-40 col-offset-10" ng-click="titleTip(item.address_id)">
+             <p><span class="ion ion-ios-compose-outline" style="font-size: 20px;"></span><span class="addrow-span" style="padding-left: 0px;">删除地址</span></p>
+          </div>
+        </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-energized" ng-if="status==1">
+    <div class="title kbh" ui-sref="consignee" style="color: #454545;">新增地址</div>
+  </div>
+</ion-view>
+
+
+
+

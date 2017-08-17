@@ -1,0 +1,59 @@
+<ion-view view-title="我的收货地址" id="cart">
+    <ion-header-bar align-title="center" class="bar bar_top straw bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high">我的收货地址</h1>
+        <div class="buttons">
+            <button class="button" ng-click="manage()">管理</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header cart-header">
+        <div class="row row-white row-cont" ng-if="!module.manage" ui-sref="cart-add-address">
+            <div class="col col-10"><i class="ion-android-add ion-squre-border"></i></div>
+            <div class="col col-80"><span>添加收货地址</span></div>
+            <div class="col col-10 font-right">
+                <i class="ion-chevron-right"></i>
+            </div>
+        </div>
+        <div class="row row-white row-cont" ng-if="!module.manage&&!package" ui-sref="cart-address-pick" style="padding-top:5px;">
+            <div class="col col-10"><i class="ion-android-archive ion-squre-border"></i></div>
+            <div class="col col-80"><span>我要上门自提</span></div>
+            <div class="col col-10 font-right">
+                <i class="ion-chevron-right"></i>
+            </div>
+        </div>
+        <div class="address-content" style="margin-bottom:20px;">
+            <div class="row row-cont-pd" ng-class="item.cd>=0?'row-white':'row-gray'" ng-repeat="item in list">
+                <div class="col col-20" ng-if="module.manage">
+                    <div class="check checkbox">
+                        <input type="checkbox" class="checkbox-one" ng-click="check(item,$event)" ng-value="item.id">
+                    </div>
+                </div>
+                <div class="row-select" ng-if="item.default==1" ng-hide="module.manage">
+                    <span class="ion-checkmark-round"></span>
+                </div>
+                <div class="col" style="padding:0;position: relative;" ng-click="setDefault(item)">
+                <div class="address-row-top address-row-cont">
+                    <span>{{item.name}}</span><span ng-bind="item.gender==1?'先生':'女士'"></span><span>{{item.telephone}}</span>
+                </div>
+                <div class="address-row-bottom address-row-cont">
+                    <span>{{item.address_name}}</span><span>{{item.remarks}}</span>
+                </div>
+                <div class="row-fw" ng-if="item.cd>=0">
+                    <img src="img/home/read-send.png" alt="">
+                </div>
+                <div class="row-fw" ng-hide="item.cd>=0">
+                        <img src="img/home/no_send.png" alt="">
+                </div>
+                </div>
+                <!--<div class="col col-20" style="position: relative" ng-if="!module.manage">
+                    <span class="ion-cle-border ion-cont-ps  ion-edit"></span>
+                </div>-->
+            </div>
+            </div>
+        <div ng-if="checkSiteId>=0&&!package" style="width: 100%;background: #de5e45;line-height: 40px;text-align: center;color: #fff;" ng-click="cancelPick()">取消自提</div>
+    </ion-content>
+    <div class="bar bar-footer bar-energized" ng-if="module.manage" style="padding:0;">
+        <button class="button button-assertive" ng-click="titSelect()" ng-disabled="!module.select" style="width:100%;font-size:20px;">确认删除</button>
+    </div>
+</ion-view>
+

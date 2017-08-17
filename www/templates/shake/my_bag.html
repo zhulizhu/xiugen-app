@@ -1,0 +1,46 @@
+<ion-view class="bg_color" id="my_bag">
+    <ion-header-bar align-title="center" class="bar bar_top bar-energized">
+        <yike-back class="return_back"></yike-back>
+        <h1 class="title high fs1">我的红包</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" overflow-scroll="true">
+        <div class="user_rule fs3" ui-sref="user_rule">
+            <a class="cl1">使用规则</a>
+            <span>
+                <img src="img/red_bag/user_rule.png">
+            </span>
+        </div>
+        <div class="bag_box">
+            <div ng-repeat="items in mybag" ng-click="select(items)" ng-if="items.if_usemoney==1||open==true">
+            <div class="item item-body">
+                <div class="ticket">
+                    <div class="ticket_bg">
+                        <span>全站通用（个别商品除外）</span>
+                        <p>满{{items.usemoney}}元可用，APP下单使用，在线支付专享</p>
+                    </div>
+                    <div class="expiry_date">有效期：<i>{{items.svalidity_period*1000|date:'yyyy-MM-dd'}}</i>至<i>{{items.evalidity_period*1000|date:'yyyy-MM-dd'}}</i></div>
+                </div>
+                <div class="ticket_price">
+                    <div class="price">
+                        <!--<p><i ng-bind="items.type=='2'?'¥':''"></i><strong ng-bind="items.money"></strong>
+                            <i ng-bind="items.type=='2'?'元':'折扣'" style="display: block"></i>红&nbsp;包</p>-->
+                        <p><i ng-bind="'¥'"></i><strong ng-bind="items.money"></strong><i>元</i>
+                            <i style="display:block">红&nbsp;包</i></p>
+                    </div>
+                    <div class="price_bg"></div>
+                </div>
+                <div class="my_bag_check" ng-if="items.id==check&&id&&type"><img src="img/red_bag/left-check.png" alt=""></div>
+            </div>
+            </div>
+        </div>
+        <div class="find_more">
+            <span class="no_more">没有更多可用红包</span>
+            <span class="more" ui-sref="invalid_bag">查看失效红包></span>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+
+
